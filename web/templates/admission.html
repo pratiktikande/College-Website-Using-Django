@@ -1,0 +1,46 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+
+<div class="headings">
+    <h2>Admission Forms</h2>
+</div>
+<div class="maincontain" style="overflow: hidden;">
+    <div class="contain" style=" position: relative; left: 10vw;">
+        <table style="font-size: 1.3vw; text-align: center;  position: relative; ">
+            <tr style="border: 0.2vw solid black;">
+                {% if number > 0 %}
+                <th
+                    style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 40vw;">
+                    <h3>Branch Name</h3>
+                </th>
+                <th
+                    style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 40vw;">
+                    <h3 align="center">links</h3>
+                </th>
+            </tr>
+            {% for i in form%}
+            <tr style="border: 0.1vw solid rgba(0, 0, 0, 0.425);">
+                <td class="td1"
+                    style=" position: relative;background-color: rgba(128, 128, 128, 0.253); text-align: center;">
+                    <h4
+                        style="font-size: 2vw; font-family: ui-sans-serif; width: 30vw ;text-align: center; position: relative; left: 4vw;">
+                        {{i.Branch}}</h4>
+                </td>
+                <td>
+                    <a href="{{i.link}}">
+                        <h4 style="font-size: 1.5vw;" align="center">link</h4>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+        </table>
+        {% if number == 0 %}
+        <h5 style="color: #603212e3; position: relative; left: -10vw; top:vw;" align="center">There is no data
+            available</h5>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

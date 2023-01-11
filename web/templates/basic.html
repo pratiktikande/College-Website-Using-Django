@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+{% load static%}
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <title>Saraswati college of Engineering</title>
+
+  <title>{% block title%} {% endblock %}</title>
+  <style>
+    .back1 {
+      background-image:linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.705)),
+      url("{% static 'images/collegeback1.jpg' %}");
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      /* overflow: hidden; */
+      /* box-sizing: border-box; */
+    }
+
+    nav {
+      z-index: 2;
+      /* background-color: #603312; */
+    }
+
+    .btn-outline-success {
+      color: white;
+      /* border-color: #198754; */
+    }
+
+    .bg-light {
+      --bs-bg-opacity: 1;
+      background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+      background-color: #60331205;
+    }
+
+    .me-2 {
+      margin-right: 0.5vw !important;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: 0 0.375rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #ffffff47;
+      background-clip: padding-box;
+      border: 1px solid #ced4da3b;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 0.25rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      color: #f9fafb;
+    }
+
+    .dropdown-toggle::after {
+      display: inline-block;
+      margin-left: 0;
+      vertical-align: 0.255em;
+      border-top: 0.3VW solid;
+      border-right: .3VW solid transparent;
+      border-bottom: 0;
+      border-left: .3VW solid transparent;
+    }
+
+    /* main page */
+    .back-main {
+      /* background-image:linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.705)) */
+      /* url("{% static 'images/collegeback1.jpg' %}"); */
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 55vw;
+      min-height: 20vw;
+      width: 100%;
+      box-sizing: border-box;
+      color: white;
+      position: relative;
+      top: -5vw;
+      overflow: hidden;
+    }
+
+    .colname {
+
+      font-size: 12vw;
+      position: relative;
+      top: 19vw;
+      font-style: italic;
+      /* display: none; */
+      font-family: ui-monospace;
+      display: inline;
+    }
+
+    .colname2 {
+      font-size: 5vw;
+      position: relative;
+      top: 24vw;
+      left: -15vw;
+      display: inline;
+      font-style: italic;
+    }
+
+    .des {
+      font-size: 2.5vw;
+      position: relative;
+      /* top: 15vw; */
+      left: 1vw;
+    }
+
+    .intro1 {
+      height: 22vw;
+      width: 40vw;
+      background-color: rgba(240, 248, 255, 0.178);
+      position: relative;
+      /* display: inline; */
+      top: 18vw;
+      left: 56vw;
+      border-radius: 10%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.719);
+      color: bisque;
+      text-align: center;
+      height: 50vw;
+      box-sizing: border-box;
+      width: 20vw;
+    }
+
+    .card-body {
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 5vw;
+    }
+
+    h2 {
+      font-size: 4vw;
+    }
+
+    h2 {
+      font-size: 3vw;
+      margin-bottom: 0.1vw;
+    }
+
+    h4 {
+      font-size: 2vw;
+      margin-bottom: 0;
+    }
+
+    h5 {
+      font-size: 1.3vw;
+    }
+
+    nav h5 {
+      font-size: 1.1vw;
+      display: inline;
+    }
+
+    p {
+      font-size: 1vw;
+      display: block;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px
+    }
+
+    .headings {
+      position: relative;
+      /* top: 1vw; */
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 2.5vw;
+      padding: 1vw;
+    }
+
+    .headings h2 {
+      color: rgba(220, 20, 60, 0.795);
+    }
+
+    .designheading {
+      /* margin-top: 3vw; */
+      background-color: rgba(255, 0, 0, 0.020);
+    }
+
+    .foot {
+      /* display: flex; */
+      position: relative;
+      margin: 0.5%;
+      border-top-right-radius: 10%;
+      border-bottom-left-radius: 10%;
+      background-color: rgba(165, 42, 42, 0.829);
+      background-color: #603212e3;
+      font-size: 1.2vw;
+    }
+
+    .foot-1 {
+      margin: 1%;
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+
+    .foot-2 {
+      margin-top: 2%;
+      display: flex;
+      position: relative;
+      left: 10vw;
+      flex-direction: column;
+      color: white;
+    }
+
+    .foot-3 {
+      margin: 1%;
+      display: flex;
+      position: relative;
+      left: 20vw;
+      flex-direction: column;
+      color: white;
+    }
+
+    .foot-1-1 {
+      margin: 10%;
+      /* padding-left: 20%; */
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .foot-1-1 h3 {
+      font-size: 2vw;
+      color: white;
+    }
+
+    .foot-2 h3 {
+      font-size: 2vw;
+      color: white;
+    }
+
+    #f2 {
+      margin-top: 30%;
+    }
+
+    #f6 {
+      margin-top: 30%;
+    }
+
+    .f7 {
+      display: flex;
+      /* justify-content: space-between; */
+      margin: 5%;
+
+    }
+
+    .icons-main {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      text-align: center;
+    }
+
+    .icon {
+      margin-left: 1%;
+      height: 3vw;
+      width: 3vw;
+    }
+
+    .last-nav a {
+      margin-left: 1%;
+      font-size: 1vw;
+      color: white;
+    }
+
+    a:not([href]):not([class]),
+    a:not([href]):not([class]):hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    .creater {
+      font-family: cursive;
+      color: white;
+    }
+
+    .foot-btn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 22vw;
+  top: 5vw;
+
+}
+
+    .foot-btn a {
+      font-family: sans-serif;
+      border-color: black;
+      background-color: rgba(0, 0, 0, 0.219);
+      position: relative;
+      /* justify-content: center; */
+      /* text-align: center; */
+      align-content: center;
+      font-size: 1.5vw;
+      margin-top: 50%;
+      padding-top: 20%;
+
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      line-height: 1.5;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      background-color: transparent;
+      border: 0.1vw solid white;
+      padding: 0.375vw 0.85vw;
+
+      border-radius: 0.25rem;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+      {% block style %}
+
+      {% endblock %}
+
+    .m {
+      /* position: absolute; */
+      /* display: none; */
+      position: relative;
+      display: none;
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      line-height: 1.5;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      background-color: transparent;
+      border: 0.1vw solid white;
+      padding: 0.375vw 0.85vw;
+
+      border-radius: 0.25rem;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    nav h5 {
+      /* font-size: 2.5vw; */
+      color: white;
+    }
+
+    .dropdown-toggle::after {
+      color: white;
+    }
+
+    .course-a {
+      text-decoration: none;
+      color: white;
+    }
+
+
+    @media screen and (min-width:770px) {
+      .dropdown-toggl :hover .m {
+        display: inline;
+        position: absolute;
+        left: 8.6vw;
+        top: 1vw;
+        /* background-color: gray; */
+
+      }
+    }
+
+    @media screen and (max-width:770px) {
+      nav h5 {
+        font-size: 3.5vw;
+        color: white;
+      }
+
+    }
+
+    @media screen and (max-width:990px) {
+      .m {
+        /* position: absolute; */
+        /* display: none; */
+        position: relative;
+        display: inline;
+        text-decoration: none;
+        overflow: hidden;
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: white;
+      }
+
+      .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 0.05vw 2.1vw;
+        clear: both;
+        font-size: 2vw;
+
+      }
+
+      .dropdown-toggl {
+        width: 90vw;
+        overflow: hidden;
+      }
+
+      .i {
+        display: inline;
+        position: relative;
+        left: 9vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        font-size: 3vw;
+        /* width: 10vw; */
+      }
+
+      ul {
+        padding-inline-start: 0px;
+      }
+    }
+
+    navbar-toggler {
+      padding: 0.15vw 0.35vw;
+      font-size: 1vw;
+      line-height: 1;
+      background-color: transparent;
+      border: -0.6vw solid transparent;
+      border-radius: 1.25vw;
+      transition: box-shadow .15s ease-in-out;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+      /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e); */
+      height: 5vw;
+      width: 5vw;
+    }
+  
+
+  </style>
+</head>
+
+<body>
+  <div class="back1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="background-color: #60331205;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/web/">
+          <h4>Saraswati college</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>about us </h5>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/secretary">secretary's message</a></li>
+                <li><a class="dropdown-item" href="/web/principal">Principal's message</a></li>
+                <li><a class="dropdown-item" href="/web/chairman">chairman's message</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/news">News</a></li>
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/web/staff">
+                <h5>staff</h5>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/web/staff/" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <h5>Academics</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for course,number in allsys %}
+                <div class="dropdown-toggl">
+                  <li><a class="dropdown-item" href="/web/bachlers/">{{course.0.dergree}}</a>
+                    <ul class="dropdown-menu m" aria-labelledby="navbarDropdown" style="padding: 0;">
+                      {% for i in course%}
+                      <li><a class="dropdown-item i" href="/web/{{i.id}}" id="qv{{i.id}}">{{i.title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                </div>
+                {% endfor %}
+                <div class="dropdown-toggl">
+                  <li><a class="dropdown-item" href="/web/elearning/">other programs</a>
+                    <ul class="dropdown-menu m" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item i" href="#">IIT Bombay Remote Center</a></li>
+                      <li><a class="dropdown-item i" href="#">Centre of Excellence in Mechanical Modeling and
+                          Computing</a>
+                      </li>
+                    </ul>
+                  </li>
+                </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://www.youtube.com/channel/UCM14Iw97mnCoNZCI8knb5Uw/playlists?view=50&sort=dd&shelf_id=6">elearning</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>admissions</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">eligibility critera</a></li>
+                <li><a class="dropdown-item" href="/web/procedure/">admision procedure</a></li>
+                <li><a class="dropdown-item" href="/web/calender/">academic calender</a></li>
+                <li><a class="dropdown-item" href="/web/mhtcetcutoff/">mhtcet cutoff</a></li>
+                <li><a class="dropdown-item" href="/web/admission/">Admission Form </a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/apply/">Apply</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>students</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">council</a></li>
+                <li><a class="dropdown-item" href="/web/trips">Trips</a></li>
+                <li><a class="dropdown-item" href="#">activities</a></li>
+                <li><a class="dropdown-item" href="#">achivements</a></li>
+                <li><a class="dropdown-item" href="#">announcement</a></li>
+
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">exam cell</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>research</h5>
+
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/projects">Projects</a></li>
+
+                <li><a class="dropdown-item" href="/web/conference/">conferrence </a></li>
+
+                <li><a class="dropdown-item" href="/web/publication">publication</a></li>
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/patent/">patent</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>alumini</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/aluminis/">our aluminis</a></li>
+                <li><a class="dropdown-item"
+                    href="https://saraswati.truecopy.in/v2/files/submitdoctranscript.tc">Transcript</a>
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://www.youtube.com/playlist?list=PLsclj8qmz4dVdaQgigO8WfXQ5Li-THBvM">alumini
+                    talk</a></li>
+                <li><a class="dropdown-item" href="/web/register">alumini registration</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://www.youtube.com/playlist?list=PLsclj8qmz4dVdaQgigO8WfXQ5Li-THBvM">workshop and
+                    seminars
+                    conducted by alumini</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>library</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/overview/">overview</a></li>
+                <li><a class="dropdown-item" href="https://saraswatikharghar.knimbus.com/#/home">knimbus </a></li>
+                <li><a class="dropdown-item" href="#">opac</a></li>
+                <li><a class="dropdown-item" href="/web/unisyllabus/">university syllabus</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/questions/">university question papers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>placement cell</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/companies">our recruiters
+                  </a></li>
+                <li><a class="dropdown-item" href="/web/placementtestmaterial/">placement test resource
+                  </a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/placement">placement report</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/web/gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/web/blog">Blog</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">
+              <h5>Search</h5>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="back-main">
+
+      <h1 class="colname">saraswati </h1>
+      <h2 class="colname2">college</h2>
+      <div class="intro1">
+        <h3 class="des" align="center" style="position: relative; top: 1vw; left: 0.4vw;">Welcome To The Best
+          Engineering College In Navi Mumbai.</h3>
+        <p align="center" style="position: relative; top: 2vw;">Saraswati College of Engineering is the leading
+          engineering institution in Navi Mumbai established in 2004.
+          We
+          aspire to be a leading research organization with a dream and vision of creating a knowledgeable society.
+          SCOE
+          is
+          provided with spacious buildings to accommodate reception, auditorium, office, classrooms, staff rooms,
+          drawing
+          halls, laboratories, workshop, library, computer center, conference halls, examination hall, recreation
+          center,
+          sports rooms, canteen, and placement cell. This facilities count us one of the Top Engineering college In
+          Navi
+          Mumbai.</p>
+      </div>
+      <!-- <div class="designcircle">
+          <img src="{% static 'images/teacher.svg'%}" class="teachersvg">
+        </div> -->
+    </div>
+  </div>
+  {% block body%} {% endblock %}
+  <footer class="foot">
+    <div class="f7">
+      <div class="foot-1">
+        <div class="foot-1-1" id="f1">
+          <h3>ADMISSIONS</h3>
+          <a>Admissions</a>
+          <a>Programmes</a>
+        </div>
+        <div class="foot-1-1" id="f2" style="width: 22vw;">
+          <h3>STUDENT HELP</h3>
+          <a>International Tieups</a>
+          <a>Scholarships</a>
+          <a>Alumni Portal</a>
+        </div>
+      </div>
+      <div class="foot-2" id="f3">
+        <h3>QUICK LINKS</h3>
+        <a> My Account Portal</a>
+        <a>Email Login</a>
+        <a>ESS Login</a>
+      </div>
+      <div class="foot-3" id="f4">
+        <div class="foot-1-1" id="f5">
+          <h3>EXPLORE</h3>
+          <a>Sports Academy</a>
+          <a>SCEL</a>
+          <a>riidl</a>
+          <a>Research</a>
+        </div>
+        <div class="foot-1-1 foot-1-2" id="f6">
+          <h3 style="width: 22vw;">GET IN TOUCH</h3>
+          <a>Maps & Directions</a>
+          <a>Faculty Directory</a>
+          <a>Emergency</a>
+          <a>News & Media</a>
+          <a>Events & Updates</a>
+          <a>Gallery</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-btn">
+          <a class="btn btn-primary" href="/web/apply/" role="button">Apply</a>
+          <a class="btn btn-primary" href="/web/gallery" role="button">Gallery</a>
+          <a class="btn btn-primary" href="/web/blog/" role="button">Blog</a>
+        </div>
+      </div>
+    </div>
+    <div class="icons-main">
+      <div class="icons">
+        <img src="{% static 'images/facebook.png'%}" class="icon">
+        <img src="{% static 'images/instagram1.png'%}" class="icon">
+        <img src="{% static 'images/twitter1.png'%}" class="icon">
+        <img src="{% static 'images/youtube.png'%}" class="icon">
+      </div>
+      <div class="last-nav">
+
+        <span class="fwarp ufacebook wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;"></span>
+        <a>about us</a>
+        <a>terms & condition</a>
+        <a>privacy & policies</a>
+      </div>
+      <div class="creater">
+        <h4>Created by manish </h4>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+    {% block script %} {% endblock %}
+
+</body>
+
+</html>

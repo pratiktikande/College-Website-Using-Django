@@ -1,0 +1,275 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+
+.wprt-container{
+position: relative;
+overflow: hidden;
+}
+.vc_row-fluid{
+position: relative;
+left: 20vw;
+}
+.control-label{
+display: inline;
+}
+.back1 {
+background-image:linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.705)),
+url("{% static 'images/collegeback1.jpg' %}");
+background-position: center;
+background-size: cover;
+width: 100%;
+box-sizing: border-box;
+overflow: hidden;
+}
+{% endblock %}
+{% block body %}
+
+<div class="wprt-container">
+  <div class="vc_row wpb_row ">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+      <div class="vc_column-inner ">
+        <div class="wpb_wrapper">
+          <div class="vc_empty_space" style="height: 45px"><span class="vc_empty_space_inner"></span>
+          </div>
+          <h3 style="color: #187a02;text-align: center;font-family:Coda;font-weight:400;font-style:normal"
+            class="vc_custom_heading">SCOE would be glad to get back in touch with our valuable
+            stakeholders, our Alumni !!! Kindly share your details. And we would appreciate if you share
+            the link with your Batchmates too.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vc_row wpb_row vc_row-fluid">
+    <div class="wpb_column vc_column_container vc_col-sm-3">
+      <div class="vc_column-inner ">
+        <div class="wpb_wrapper"></div>
+      </div>
+    </div>
+    <div class="wpb_column vc_column_container vc_col-sm-6">
+      <div class="vc_column-inner ">
+        <div class="wpb_wrapper">
+          <div role="form" class="wpcf7" id="wpcf7-f3350-p11670-o2" lang="en-US" dir="ltr">
+            <div class="screen-reader-response" role="alert" aria-live="polite"></div>
+            <form action="/department-of-computer-engineering/alumni-registration/#wpcf7-f3350-p11670-o2" method="post"
+              class="wpcf7-form init" novalidate="novalidate">
+              <div style="display: none;">
+                <input type="hidden" name="_wpcf7" value="3350">
+                <input type="hidden" name="_wpcf7_version" value="5.2.2">
+                <input type="hidden" name="_wpcf7_locale" value="en_US">
+                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3350-p11670-o2">
+                <input type="hidden" name="_wpcf7_container_post" value="11670">
+                <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+              </div>
+              <div class="form-group">
+                <label for="your-name" class="col-sm-4 control-label">Name:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value=""
+                      size="40vw" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="dob" class="col-sm-4 control-label">Date of Birth:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap dob"><input type="date" name="dob" value=""
+                      class="wpcf7-form-control wpcf7-date wpcf7-validates-as-required wpcf7-validates-as-date form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Parent" class="col-sm-4 control-label">Parent's / Gurdian's
+                  Name:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap Parent"><input type="text" name="Parent" value="" size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="grnumber" class="col-sm-4 control-label">College GR Number:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap grnumber"><input type="text" name="grnumber" value="" size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="raddress" class="col-sm-4 control-label">Residential Address:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap raddress"><textarea name="raddress" cols="40" rows="10"
+                      class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></textarea></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="phnumber" class="col-sm-4 control-label">Phone Number (R.):</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap phnumber"><input type="tel" name="phnumber" value="" size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mobile" class="col-sm-4 control-label">Phone Number (Mobile):</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap mobile"><input type="tel" name="mobile" value="" size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-4 control-label">E-Mail ID:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="department" class="col-sm-4 control-label">Department:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap department"><select name="department"
+                      class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false">
+                      <option value="Computer Engineering">Computer Engineering</option>
+                      <option value="Electronics &amp; Telecommunication">Electronics &amp;
+                        Telecommunication</option>
+                      <option value="Mechanical Engineering">Mechanical Engineering</option>
+                      <option value="Civil Engineering">Civil Engineering</option>
+                      <option value="Information Technology">Information Technology</option>
+                      <option value="Automobile Engineering">Automobile Engineering</option>
+                    </select></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="YPassing" class="col-sm-4 control-label">Year of Passing:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap YPassing"><select name="YPassing"
+                      class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false">
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                    </select></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="MStatus" class="col-sm-4 control-label">Maritial Status:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap MStatus"><select name="MStatus"
+                      class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false">
+                      <option value="Unmarried">Unmarried</option>
+                      <option value="Married">Married</option>
+                    </select></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="COrganisation" class="col-sm-4 control-label">Current
+                  Organisation:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap COrganisation"><input type="text" name="COrganisation" value=""
+                      size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Designation" class="col-sm-4 control-label">Designation:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap Designation"><input type="text" name="Designation" value=""
+                      size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="OrganisationAddress" class="col-sm-4 control-label">Organisation's
+                  Address:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap OrganisationAddress"><textarea name="OrganisationAddress"
+                      cols="40" rows="10"
+                      class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></textarea></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="PhoneNumber" class="col-sm-4 control-label">Phone Number:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap PhoneNumber"><input type="tel" name="PhoneNumber" value=""
+                      size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="FaxNumber" class="col-sm-4 control-label">Fax Number:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap FaxNumber"><input type="tel" name="FaxNumber" value="" size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="BloodGroup" class="col-sm-4 control-label">Blood Group:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap BloodGroup"><input type="text" name="BloodGroup" value=""
+                      size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="OtherInformation" class="col-sm-4 control-label">Other
+                  Information:</label>
+                <p></p>
+                <div class="col-sm-8">
+                  <span class="wpcf7-form-control-wrap OtherInformation"><input type="text" name="OtherInformation"
+                      value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true" aria-invalid="false"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <input type="submit" value="SEND"
+                    class="wpcf7-form-control wpcf7-submit btn btn-primary btn-special"><span
+                    class="ajax-loader"></span>
+                </div>
+              </div>
+              <input type="hidden" class="wpcf7-pum"
+                value="{&quot;closepopup&quot;:false,&quot;closedelay&quot;:0,&quot;openpopup&quot;:false,&quot;openpopup_id&quot;:0}">
+              <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wpb_column vc_column_container vc_col-sm-3">
+      <div class="vc_column-inner ">
+        <div class="wpb_wrapper"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

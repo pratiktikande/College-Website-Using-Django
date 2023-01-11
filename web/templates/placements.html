@@ -1,0 +1,593 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+
+.infopro {
+background-color: #603312;
+
+width: 30vw;
+position: absolute;
+margin: 0.1vw;
+color: white;
+font-size: 3vw;
+z-index: 1;
+transform: translateY(-4vw);
+}
+
+
+.carousel-control-next-icon {
+background-color: rgb(29, 82, 82);
+position: relative;
+top: 80vw;
+font-size: 10vw;
+left: -79.5vw;
+height: 4vw;
+width: 4vw;
+}
+
+.carousel-control-prev-icon {
+background-color: rgb(29, 82, 82);
+position: relative;
+top: 80vw;
+font-size: 30vw;
+height: 4vw;
+width: 4vw;
+}
+.designheading1{
+display: inline;
+margin: 2vw;
+/* background-color: rgb(38, 192, 192); */
+}
+.divtable{
+margin-left: 0.5vw;
+/* margin-right: 0.5vw; */
+height: 30vw;
+background-color: rgba(255, 0, 0, 0.055);
+}
+.infotable{
+display: inline;
+position: relative;
+}
+.infotable tr td{
+padding: 0.8vw;
+}
+.tabledesign {
+background-color: white;
+height: 10vw;
+width: 23vw;
+}
+.tabledesign2{
+display: inline;
+position:relative;
+top: 4vw;
+/* margin-left: 2.5vw; */
+}
+.database{
+display: inline;
+position:relative;
+top: 2vw;
+left: 7vw;
+/* height: auto; */
+}
+
+{% endblock %}
+{% block body %}
+<div class="designheading1" id="{{labels}}" style="width: 50vw;">
+    <div class="card-body headings " style="height: 25vw; position:relative; top:4vw;">
+        <h2 align="center">SCOE Placement Cell</h2>
+        <!-- <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h4> -->
+        <h4 class="card-text" align="center">The Focus of Saraswati College Training & Placement Cell is to provide a
+            huge number of
+            employment opportunities & world-class training as per the market needs to bring their students in
+            leading
+            organizations. </h4>
+        <!-- <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a> -->
+    </div>
+</div>
+<div class="divtable" style="overflow: hidden;">
+    <div class="designheading">
+        <div class="headings">
+            <h2>Our Placement overall report</h2>
+        </div>
+    </div>
+    <table class="infotable">
+        <tr>
+
+            <td>
+                <div class="tabledesign">
+                    <div class="database">
+                        <h4>{{placement.0.highestpackage}} lakhs</h4>
+                    </div>
+                    <div class="tabledesign2">
+                        <h4 align="center">Highest package</h4>
+                    </div>
+
+                </div>
+            </td>
+            <td>
+                <div class="tabledesign">
+                    <div class="database">
+                        <h4>{{placement.0.averagepackage}} lakhs</h4>
+                    </div>
+                    <div class="tabledesign2">
+                        <h4 align="center">Average package</h4>
+                    </div>
+
+                </div>
+            </td>
+            <td>
+                <div class="tabledesign">
+                    <div class="database">
+                        <h4>{{placement.0.numberofplacement}} students</h4>
+                    </div>
+                    <div class="tabledesign2">
+                        <h4 align="center">Number of Placement</h4>
+                    </div>
+
+                </div>
+            </td>
+            <td>
+                <div class="tabledesign">
+                    <div class="database">
+                        <h4>{{placement.0.companies_visited}} students</h4>
+                    </div>
+                    <div class="tabledesign2">
+                        <h4 align="center">companies visiting</h4>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div style="min-height: 80vw;">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <div style="width: 35vw; position: relative; top: 4vw; left: 8vw; height: 35vw;box-shadow: 0 1vw 2vw 0 rgb(0 0 0 / 7%);  ">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div style="width: 35vw; position: relative; top: 4vw; left: 18vw; height: 35vw;box-shadow: 0 1vw 2vw 0 rgb(0 0 0 / 7%); ">
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="width: 35vw; position: relative; top: 8vw; left: 8vw; height: 35vw;box-shadow: 0 1vw 2vw 0 rgb(0 0 0 / 7%); ">
+                    <canvas id="myChart1"></canvas>
+                </div>
+            </td>
+            <td>
+                <div style="width: 45vw; position: relative; top: 8vw; left: 15vw; height: 40vw;box-shadow: 0 1vw 2vw 0 rgb(0 0 0 / 7%); ">
+                    <canvas id="myChart3"></canvas>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="maincontain" style="min-height:auto;  top: 4vw; position: relative;  overflow: hidden;">
+    <div class="contain" style="height: auto;">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    {% if number > 0 %}
+                    {% for i in place %}
+                    <div class="contain">
+                        <div class="mega-projects" style="min-height: 55vw;">
+                            <div class="headings">
+                                <h2>Our Placements</h2>
+                            </div>
+                            <div class="design3">
+                            </div>
+                            <div class="infopro" style="height: 70vw;">
+                                <h3 style="position: relative; top: 5vw; display: inline; font-size: 2vw;">Name : <h4
+                                        style="position: relative; top: 5vw; display: inline;">{{i.name}}</h4>
+                                </h3>
+                                <h5 style="margin-top: 4vw; position: relative; top: 5vw; ">Date :
+                                    {{i.Date_of_allotment}}</h5>
+                                <h5 style="margin-top: 4vw; position: relative; top: 2vw; ">Jobpost:{{i.jobpost}}
+                                </h5>
+                                <h5 style="margin-top: 4vw; position: relative; top: 2vw; ">Type:{{i.Type}}</h5>
+                                <h5 style="margin-top: 4vw; position: relative; top: 2vw; ">Package:{{i.package}}</h5>
+                                <h5 style="margin-top: 4vw; position: relative; top: 2vw; ">Company
+                                    name:{{i.company_name}}</h5>
+                                <h5 style="margin-top: 4vw; position: relative; top: 2vw; ">Subjects:{{i.Subject}}</h5>
+                            </div>
+                            <div class="sport-card" style="width: 80vw;">
+                                <div class="card-body mm">
+                                    <div class="contain" style="position: relative; left: 20vw;">
+                                        <table border="0.1">
+                                            <tr>
+                                                <td style="height: 20vw;" class="td1" align="center"><img src="/media/{{i.image}}" alt="helo"
+                                                        style="height: 20vw; width: 20vw; position: relative; left: 10vw;">
+                                                </td>
+                                                <td align="center">
+                                                    <h3 align="center" style="font-size: 2vw;">Reviews</h3>
+                                                    <p>{{i.review_by_interviewer}}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" align="center" style="overflow: hidden; position: relative; top: 2vw;">
+                                                    <p style="width: 62vw; margin: 1vw;">{{i.candidate_details}}</p>
+                                                </td>
+                        
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter > 0 and not forloop.last%}
+                </div>
+                <div class="carousel-item">
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                    {% if number > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" style="position: absolute; left: 7vw; top: 50vw;" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" style="position: absolute; left: -72vw; top: 50vw;" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+    {% if number == 0 %}
+    <div class="designheading">
+        <div class="headings">
+            <h2>Our Placement report</h2>
+        </div>
+    </div>
+    <h5 style="color: #603212e3; position: relative; left: -1vw; top:1vw;" align="center">There is no student detail
+        available</h5>
+    {% endif %}
+
+
+{% endblock %}
+{% block script %}
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels:[{% for i in chart %} '{{i.year}}', {% endfor %} ],
+        
+        datasets: [{
+          label: 'Highest Package',
+          data:[{% for i in chart %} '{{i.Highestpackage}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+
+          ],
+          borderWidth: 1
+        },{
+          label: 'Average Package',
+          data:[{% for i in chart %} '{{i.Averagepackage}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(25, 9, 432, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+
+          ],
+          borderWidth: 1
+        }
+    ]
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx1 = document.getElementById('myChart1').getContext('2d');
+    const myChart1 = new Chart(ctx1, { 
+      data: {
+        labels:[{% for i in chart %} '{{i.year}}', {% endfor %}],
+        
+        datasets: [{
+          type: 'line',
+          label: 'Students selected',
+          data:[{% for i in chart %} '{{i.studentselected}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.9)',
+            'rgba(54, 162, 235, 0.9)',
+            'rgba(255, 206, 86, 0.9)',
+            'rgba(75, 192, 192, 0.9)',
+            'rgba(153, 102, 255, 0.9)',
+            'rgba(255, 159, 64, 0.9)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          type: 'line',
+          label: 'companies visited',
+          data:[{% for i in chart %} '{{i.Companiesrecruiting}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.9)',
+            'rgba(54, 162, 235, 0.9)',
+            'rgba(255, 206, 86, 0.9)',
+            'rgba(75, 192, 192, 0.9)',
+            'rgba(153, 102, 255, 0.9)',
+            'rgba(255, 159, 64, 0.9)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }
+    ]
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx2 = document.getElementById('myChart2').getContext('2d');
+    const myChart2 = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels:[{% for i in chart %} '{{i.year}}', {% endfor %} ],
+        
+        datasets: [{
+          label: 'Companies recruiting',
+          data:[{% for i in chart %} '{{i.Companiesrecruiting}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.9)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx3 = document.getElementById('myChart3').getContext('2d');
+    const myChart3 = new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels:[{% for i in chart %} '{{i.year}}', {% endfor %} ],
+        
+        datasets: [{
+          label: 'Computer Engineering',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_comp}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.9)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'IT Engineering',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_IT}}', {% endfor %}],
+          backgroundColor: [
+
+            'rgba(54, 162, 235, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Civil Engineering',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_Civil}}', {% endfor %}],
+          backgroundColor: [
+
+            'rgba(255, 206, 86, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Mechanical Engineering',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_Mech}}', {% endfor %}],
+          backgroundColor: [
+
+            'rgba(75, 192, 192, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Data science',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_Data}}', {% endfor %}],
+          backgroundColor: [
+
+            'rgba(153, 102, 255, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'AI & ML',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_Aiml}}', {% endfor %}],
+          backgroundColor: [
+
+            'rgba(255, 159, 64, 0.9)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Automobile Engineering',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_Auto}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(25, 9, 132, 0.9)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Electronic Engineering',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_Electronics}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(54, 112, 235, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Electronics & Telecommunication Engineering',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_Electronicsandtele}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(55, 26, 86, 0.9)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Humanities and Engineering Sciences',
+          data:[{% for i in chart %} '{{i.studentselectedinbranch_humanities}}', {% endfor %}],
+          backgroundColor: [
+            'rgba(13, 10, 255, 0.9)',
+
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }
+    ]
+      },
+      options: {
+          
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                stacked: true
+            },
+            y: {
+                stacked: true
+            }
+        }
+      }
+    });
+  </script>
+{% endblock %}

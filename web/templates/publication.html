@@ -1,0 +1,35 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+{% endblock %}
+{% block body %}
+    <div style="overflow: hidden;">
+        <div class="designheading">
+            <div class="headings">
+                <h2 style="font-size: 2vw;">Our publications</h2>
+            </div>
+        </div>
+        <table align="centre" style="font-size: 1.3vw; text-align: center;  position: relative; left: 8vw; width: 80vw;">
+            <tr>
+            <th style="font-size: 1.5vw; border: 0.2vw solid black; position: relative;background-color: rgba(128, 128, 128, 0.253);">Discipline</th>
+            <th style="font-size: 1.5vw; border: 0.2vw solid black; position: relative;background-color: rgba(128, 128, 128, 0.253);">programmes</th>
+            </tr>
+            <tr>
+                <td rowspan='{{number}}' style="background-color: rgba(128, 128, 128, 0.253); border: 0.1vw solid black;">
+                    <h4>Publications</h4>
+                </td>
+                {% for i in publication %}
+                <td style="font-size: 1.5vw;border: 0.1vw solid black; position: relative;">
+                  <a style="font-size: 1.5vw;" href="{{i.link}}">{{i.title}}</a>
+                </td>
+                {% if number > 1 %}
+            </tr>
+            <tr>
+
+            {% endif %}
+            {% endfor %}
+            </tr>
+        </table>
+
+    </div>
+    {% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+        .img22 {
+            height: 20vw;
+            width: 25vw;
+            position: relative;
+            top: 1vw;
+            margin: 1%;
+        }
+
+        .mm {
+            flex: 0 0 auto;
+            padding: 0rem 3vw;
+            left: 28vw;
+            position: relative;
+        }
+
+        .contain h3 {
+            margin-left: 2%;
+        }
+
+        .contain h5 {
+            margin-left: 2%;
+        }
+
+        .maincontain {
+            height: auto;
+            margin: 0.1vw;
+        }
+
+        .td1 {
+            height: 2vw;
+        }
+        {% endblock %}
+        {% block body %}
+    <div class="maincontain">
+        {% if number == 0 %}
+        <div class="designheading">
+            <div class="headings">
+                <h2>Our Blogs</h2>
+            </div>
+        </div>
+            <h5 style="color: #603212e3; position: relative; left: -1vw; top:1vw;" align="center">There is no Blogs
+                available</h5>
+        {% endif %}
+        {% if number > 0 %}
+        {% for i in blog_details%}
+        <div class="mega-projects">
+
+            <div class="designheading">
+                <div class="headings">
+                    <h2>Our Blogs</h2>
+                </div>
+                <div class="design3">
+                </div>
+            </div>
+            <div class="infopro">
+                <h3 style="position: relative; top: 10vw; display: inline;">Name : <h4
+                        style="position: relative; top: 10vw; display: inline;">{{i.name}}</h4>
+                </h3>
+                <h5 style="margin-top: 4vw; position: relative; top: 10vw; ">Date : {{i.date}}</h5>
+                <h5 style="margin-top: 4vw; position: relative; top: 7vw; ">writer: {{i.writer}}</h5>
+            </div>
+            <div class="sport-card" style="width: 80vw;">
+                <div class="card-body mm">
+                    <div class="contain">
+                        <table border="0.1">
+                            <tr>
+                                <td style="height: 20vw;" class="td1" align="center"><img src="/media/{{i.image}}"
+                                        alt="helo" class="img22">
+                                </td>
+                                <td align="center">
+                                    <h3 align="center">Reviews by students </h3>
+                                    <p>{{i.blog_details1}}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="overflow: hidden;">
+                                    <p style="width: 62vw; margin: 1vw;">{{i.blog_details2}}</p>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endblock %}

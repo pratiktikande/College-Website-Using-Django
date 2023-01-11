@@ -1,0 +1,44 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+tr td {
+padding:1vw;
+}
+{% endblock %}
+{% block body %}
+
+
+
+<div class="maincontain" style="overflow: hidden; background-color: #f3f9fc; margin:1vw ;">
+    <div class="headings">
+        <h2>Our Companies</h2>
+    </div>    
+    <div class="contain" style="position: relative; left: 10vw; margin-bottom: 5vw;">
+        {% if number == 0 %}
+        <h5 style="color: #603212e3; position: relative; left: 0vw; top:1vw;" align="center">There is no details
+            available</h5>
+        {% endif %}
+        <table style=" background-color: white;">
+            <tr>
+                {% if number > 0 %}
+                {% for i in company%}
+                <td class="td1" align="center" style="border: 0.2vw double black;">
+                    <img src="/media/{{i.image}}" alt="helo" style="height: 15vw; width: 17vw;">
+                    <!-- <h4>{{i.name}}</h4> -->
+                </td>
+
+                {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last%}
+            </tr>
+            <tr>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </tr>
+        </table>
+    </div>
+    <div class="designheading1">
+        <div class="headings1">
+        </div>
+    </div>
+</div>
+{% endblock %}

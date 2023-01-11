@@ -1,0 +1,179 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+.carousel-control-next-icon {
+background-color: rgba(29, 82, 82, 0.5);
+position: relative;
+top: 23vw;
+font-size: 10vw;
+left: -80.5vw;
+height: 4vw;
+width: 4vw;
+z-index: 10;
+}
+
+.carousel-control-prev-icon {
+background-color: rgba(29, 82, 82, 0.534);
+position: relative;
+top: 23vw;
+font-size: 30vw;
+height: 4vw;
+width: 4vw;
+}
+
+.divtable {
+margin-left: 0.5vw;
+/* margin-right: 0.5vw; */
+height: 30vw;
+background-color: rgba(255, 0, 0, 0.055);
+}
+
+.infotable {
+display: inline;
+position: relative;
+/* left: 1vw; */
+left: 20vw;
+}
+
+tr td {
+padding: 0.6vw;
+}
+
+.tabledesign {
+background-color: white;
+height: 13vw;
+width: 29.5vw;
+
+}
+
+.tabledesign2 {
+display: inline;
+position: relative;
+top: 8vw;
+/* margin-left: 2.5vw; */
+}
+
+.database {
+display: inline;
+position: relative;
+top: 5vw;
+/* height: auto; */
+}
+
+.carousel-control-prev {
+left: 0;
+height: 10vw;
+}
+
+{% endblock %}
+{% block body %}
+
+<div class="divtable" style="margin-top:1vw;">
+    <!-- <div class="designheading"> -->
+    <div class="headings">
+        <h2>Our Trips overall report</h2>
+    </div>
+    <!-- </div> -->
+    <table class="infotable">
+        <tr>
+            <td>
+                <div class="tabledesign">
+                    <div class="database " style="text-align: center; position: relative; top: 4vw;">
+                        <h2 style="font-size: 1.8vw; color: rgba(220, 20, 60, 0.795);">{{tripsdetail.0.Besttrip}}</h2>
+                    </div>
+                    <div class="tabledesign2">
+                        <h4 align="center">Best Trip</h4>
+                    </div>
+
+                </div>
+            </td>
+            <td>
+                <div class="tabledesign">
+                    <div class="database" style="text-align: center;">
+                        <h4 style="font-size: 1.8vw; color: rgba(220, 20, 60, 0.795);">{{tripsdetail.0.total_trips}}</h4>
+                    </div>
+                    <div class="tabledesign2">
+                        <h4 align="center" >Number of Trips conducted</h4>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="headings">
+    <h2>Our trips</h2>
+</div>
+<div class="maincontain">
+    <div class="contain">
+        <div id="carouselExampleControls" class="carousel " data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- <div class="contain" style="height: auto;"> -->
+                    {% if number > 0 %}
+                    {% for i in trips%}
+                    <div class="contain" style="height: auto;">
+                        <div class="headings" style=" top: -5vw; display: inline;">
+                            <h2 style="position: relative;left: 1vw; top: 5vw; width: 30vw;">{{i.place}}</h2>
+                        </div>
+                        <div class="mega-projects" style="height: auto;">
+                            <div class="card-body foreigntripcardbody" style="max-height: 50vw;">
+                                <div class="contain" style="height: auto; max-height: 37vw;">
+                                    <!-- <div class="headings" style=" top: -5vw; display: inline;">
+                                        <h2 style="position: relative;left: 1vw; top: 5vw; width: 30vw;">{{i.place}}</h2>
+                                      </div> -->
+                                    <p
+                                        style="position: relative; left: 2vw; margin: 1%; height: 20vw; top: 1vw; width: 30vw;">
+                                        {{i.details}}</p>
+                                    <img src='/media/{{i.image}}' alt="helo"
+                                        style="position: relative; left: 35vw; margin: 1%; height: 20vw; top: -30vw; width: 20vw; display: inline;"
+                                        class="img22">
+                                    <img src='/media/{{i.image1}}' alt="helo"
+                                        style="position: relative; left: 10vw;margin: 1%; height: 20vw; top: -8vw; width: 30vw; display: inline;"
+                                        class="img22">
+                                    <img src='/media/{{i.image2}}' alt="helo"
+                                        style="position: relative; left: 5vw;margin: 1%; height: 20vw; top: -30vw; width: 30vw; display: inline;"
+                                        class="img22">
+                                    <img src='/media/{{i.image3}}' alt="helo"
+                                        style="position: relative; left: 65vw;margin: 1%; height: 20vw; top: -30vw; width: 25vw; display: inline;"
+                                        class="img22">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last%}
+                <div class="carousel-item">
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last%}
+                </div>
+                {% endif %}
+                {% if number > 1 %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" style="position: absolute; left:4vw; top:37vw;"
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" style="position: absolute; left: -75vw; top:37vw;"
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% if number == 0 %}
+<div class="designheading">
+    <div class="headings">
+        <h2>Our Trips</h2>
+    </div>
+</div>
+<h5 style="color: #603212e3; position: relative; left: -1vw; top:1vw;" align="center">There is no Trip details
+    available here!!!!</h5>
+{% endif %}
+{% endblock %}

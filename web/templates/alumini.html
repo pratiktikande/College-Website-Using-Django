@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+{% endblock %}
+{% block body %}
+    <div class="designheading">
+        <div class="headings">
+            <h2>Our aluminis</h2>
+        </div>
+    </div>
+    
+    <div class="maincontain">
+        <div class="designheading2">
+            <div class="headings2">
+            </div>
+        </div>
+        <div class="designheading3">
+            <div class="headings3">
+            </div>
+        </div>
+        <div class="contain">
+            {% if number == 0 %}
+            <h5 style="color: #603212e3; position: relative; left: 0vw; top:1vw;" align="center">There is no details available</h5>
+            {% endif %}
+            <table >
+                <tr>
+                    {% if number > 0 %}
+                    {% for i in aluminis%}
+                    <td class="td1" align="center">
+                        <img src="/media/{{i.image}}" alt="helo" class="img">
+                        <h3>{{i.name}}</h3>
+                    </td>
+
+                    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last%}
+                </tr>
+                <tr>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </tr>
+            </table>
+        </div>
+        <div class="designheading1">
+            <div class="headings1">
+            </div>
+        </div>
+    </div>
+    {% endblock %}

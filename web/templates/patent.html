@@ -1,0 +1,45 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+{% endblock %}
+{% block body %}
+    <div style="overflow: hidden;">
+        <div class="designheading">
+            <div class="headings">
+                <h2 style="font-size: 2vw;">Our publications</h2>
+            </div>
+        </div>
+        <table border="1px"  align="centre" style="font-size: 1.3vw; text-align: center;  position: relative; left: 8vw; width: 80vw;">
+            <tr>
+            <th style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);">Patent number</th>
+            <th style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);">Title</th>
+            <th style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);">Authors</th>
+            <th style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);">Date of filling</th>
+            </tr>
+            {% if number > 0%}
+            {% for i in patents%}
+            <tr>
+                <td  style="background-color: rgba(128, 128, 128, 0.253);">
+                    <h4>{{i.patentnumber}}</h4>
+                </td>
+                <td>
+                  <h5>{{i.title}}</h5>
+                </td>
+                <td>
+                    <h5>{{i.members}}</h5>
+                  </td>
+                  <td>
+                    <h5>{{i.date}}</h5>
+                  </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            {% if number == 0 %}
+            <tr>
+                <td colspan="4">  nothing to show</td>
+            </tr>
+            {% endif%}
+        </table>
+
+    </div>
+    {% endblock %}

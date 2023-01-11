@@ -1,0 +1,39 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+{% endblock %}
+{% block body %}
+  <div class="maincontain">
+    <div class="headings">
+      <h2>Newspaper</h2>
+    </div>
+    <div class="contain">
+      {% if number == 0 %}
+      <h5 style="color: #603212e3; position: relative; left: 0vw; top:1vw;" align="center">There is no news
+        available</h5>
+      {% endif %}
+      <table>
+        <tr>
+          {% if number > 0 %}
+          {% for i in newspaper%}
+          <td class="td1">
+            <div class="" style="width: 23rem;">
+              <img src="/media/{{i.image}}" class="img" alt="...">
+              <div class="card-body">
+                <p class="card-text">{{i.details}}</p>
+              </div>
+            </div>
+          </td>
+
+          {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last%}
+        </tr>
+        <tr>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  {% endblock %}

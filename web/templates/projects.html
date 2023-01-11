@@ -1,0 +1,216 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+
+        .carousel-control-next-icon {
+            background-color: rgba(29, 82, 82, 0.5);
+            position: relative;
+            top: 17vw;
+            font-size: 10vw;
+            left: -79.5vw;
+            height: 4vw;
+            width: 4vw;
+            z-index: 10;
+        }
+
+        .carousel-control-prev-icon {
+            background-color: rgba(29, 82, 82, 0.534);
+            position: relative;
+            top: 17vw;
+            font-size: 30vw;
+            height: 4vw;
+            width: 4vw;
+        }
+        .designheading1{
+            display: inline;
+            margin: 2vw;
+            /* background-color:  rgb(38, 192, 192); */
+        }
+        .divtable{
+            margin-left: 0.5vw;
+            /* margin-right: 0.5vw; */
+            height: 30vw;
+            background-color: rgba(255, 0, 0, 0.055);
+        }
+        .infotable{
+            display: inline;
+            position: relative;
+            /* left: 1vw; */
+        }
+        .infotable tr td{
+            padding: 0.8vw;   
+        }
+        .tabledesign {
+            background-color: white;
+            height: 13vw;
+            width: 29.5vw;
+            
+        }
+        .tabledesign2{
+            display: inline;
+            position:relative;
+            top: 8vw;
+            /* margin-left: 2.5vw; */
+        }
+        .database{
+            display: inline;
+            position:relative;
+            top: 5vw;
+            left: 10vw;
+            /* height: auto; */
+        }
+        .database h4{
+            display:inline;
+        }
+        {% endblock %}
+        {% block body %}
+    <div class="designheading1" style="width: 50vw;">
+        <div class="card-body headings " style="height: 25vw; position:relative; top:4vw;">
+            <h2 align="center">SCOE Project Cell</h2>
+            <!-- <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h4> -->
+            <h4 class="card-text" align="center">The Focus of Saraswati College project Cell is to provide a huge number of
+                employment opportunities & world-class training as per the market needs to bring their students in
+                leading
+                organizations. </h4>
+            <!-- <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a> -->
+        </div>
+    </div>
+    <div class="divtable">
+        <div class="designheading">
+            <div class="headings">
+                <h2>Our Projects overall report</h2>
+            </div>
+        </div>
+        <table class="infotable">
+            <tr>
+                <td>
+                    <div class="tabledesign">
+                        <div class="database">
+                            <h4>{{projectdetail.0.total_projects}} projects</h4>
+                        </div>
+                        <div class="tabledesign2" style="position: relative; top: 7vw;">
+                            <h4 align="center">Total project</h4>
+                        </div> 
+                        
+                    </div>
+                </td>
+                <td>
+                    <div class="tabledesign">
+                        <div class="database">
+                            <h4>{{projectdetail.0.Bestproject}}</h4>
+                        </div>
+                        <div class="tabledesign2" style="position: relative; top: 7vw;">
+                            <h4 align="center">Best project</h4>
+                        </div> 
+                        
+                    </div>
+                </td>
+                <td>
+                    <div class="tabledesign">
+                        <div class="database">
+                            <h4>{{projectdetail.0.numberofprojectcoordinated}} projects</h4>
+                        </div> 
+                        <div class="tabledesign2" style="position: relative; top: 7vw;">
+                            <h4 align="center" >Number of Project coordinated</h4>
+                        </div> 
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="maincontain">
+        <div class="contain">
+            <div id="carouselExampleControls" class="carousel " data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="contain">
+                            {% if number > 0 %}
+                            {% for i in project%}
+                            <div class="mega-projects">
+                                <div class="designheading">
+                                    <div class="headings">
+                                        <h2>Our Projects</h2>
+                                    </div>
+                                    <div class="design3">
+                                    </div>
+                                </div>
+                                <div class="infopro" style="margin-left: 1vw;">
+                                    <h3 style="position: relative; top: 5vw; display: inline;">Name : <h4
+                                            style="position: relative; top: 5.2vw; display: inline;">{{i.name}}</h4>
+                                    </h3>
+                                    <h5 style="margin-top: 4vw; position: relative; top: 3vw; ">Date : {{i.Date_of_project}}</h5>
+                                    <h5 style="margin-top: 4vw; position: relative; top: 1vw; ">Subject:{{i.Subject}}
+                                    </h5>
+                                    <h5 style="margin-top: 4vw; position: relative; top: 1vw; ">Type:{{i.Type}}</h5>
+                                </div>
+                                <div class="sport-card" style="width: 80vw; position: relative; left: 30vw; top: -20vw;">
+                                    <div class="card-body mm">
+                                        <div class="contain">
+                                            <table border="0.1">
+                                                <tr>
+                                                    <td class="td1" align="center"><img  style="height: 15vw; width: 30vw; margin-top: 1vw;"
+                                                            src="/media/{{i.image}}" alt="helo" >
+                                                    </td>
+                                                
+                                                    <td class="td1" align="center"><img style="height: 15vw;width: 30vw; margin-top: 1vw" 
+                                                            src="/media/{{i.image1}}" alt="helo">
+                                                    </td> 
+                                                </tr>
+                                                <tr>
+                                                <td class="td1" align="center"><img style="height: 15vw; width: 30vw; margin-top: 1vw" 
+                                                    src="/media/{{i.image2}}" alt="helo">
+                                            </td>
+                                            <td class="td1" align="center"><img style="height: 15vw; width: 30vw; margin-top: 1vw" 
+                                                src="/media/{{i.image3}}" alt="helo">
+                                        </td>  
+                                        </tr>
+                                                <tr>
+                                                    <td colspan="2" align="center"
+                                                        style="overflow: hidden; position: relative; top: 2vw;">
+                                                        <p style="width: 62vw; margin: 1vw;">{{i.Achievements}}</p>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last%}
+                    <div class="carousel-item">
+                    <div class="contain">
+                    {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                    {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last%}
+                    </div>
+                    </div>
+                    {% endif %}
+                    {% if number > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if number == 0 %}
+    <div class="designheading">
+        <div class="headings">
+            <h2>Our Projects</h2>
+        </div>
+    </div>
+    <h5 style="color: #603212e3; position: relative; left: -1vw; top:1vw;" align="center">There is no Projects available</h5>
+    {% endif %}
+    {% endblock %}

@@ -1,0 +1,219 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+        .cll {
+            position:relative;
+            <!-- transform: translate(-10vw, -2vw); -->
+            z-index: -20;
+            /* height: 20vw; */
+            top: -35vw;
+            margin: 0;
+            /* overflow: hidden; */
+        }
+
+        .aa {
+            background-color: #b7202e;
+            height: 55vw;
+            width: 30vw;
+            left: 85vw;
+            top: -26vw;
+            z-index: -20;
+            position: relative;
+        }
+
+        .ab {
+            background-color: #ed1c24;
+            height: 55vw;
+            width: 30vw;
+            left: 75vw;
+            top: -81vw;
+            z-index: -21;
+            position:relative;
+        }
+
+        .ac {
+            background-color: #e7e8e9;
+            height: 50vw;
+            width: 40vw;
+            left: 55vw;
+            top: -135vw;
+            z-index: 10;
+            position: relative;
+        }
+        .headings2 {
+            position: relative;
+            /* top: 1vw; */
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 2.5vw;
+            padding: 1vw;
+          }
+      
+          .headings2 h2 {
+            color: rgba(220, 20, 60, 0.795);
+          }
+        
+        @media screen and (max-width:990px) {
+            .cll {
+                position:relative;
+                <!-- transform: translate(-10vw, -2vw); -->
+                z-index: -20;
+                /* height: 20vw; */
+                top: -35vw;
+                margin: 0;
+                /* overflow: hidden; */
+            }
+            .ac {
+                background-color: #e7e8e9;
+                height: 55vw;
+                width: 40vw;
+                left: 55vw;
+                top: -135vw;
+                z-index: 10;
+                position: relative;
+            }
+            .table{
+                position:relative;
+                left:2vw;
+                border-spacing=0
+                Top:-vw
+            }
+            .table td{
+                padding:1.7vw;
+            }
+            ul{
+                margin:0;
+                text-decoration:none;
+                list-style-type:none;
+            }
+            li{
+                margin:0;
+                text-decoration:none;
+                list-style-type:none;
+            }
+            .headings2 {
+                position: relative;
+                /* top: 1vw; */
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 0.1vw;
+                padding: 1vw;
+              }
+          
+              .headings2 h2 {
+                color: rgba(220, 20, 60, 0.795);
+              }
+              
+        }
+        {% endblock %}
+        {% block body %}
+    <div class="designheading">
+        <div class="headings">
+            <h1>Bachelor of Technology</h1>
+            {% for i in coursess %}
+            <h2>{{i.title}} | B.Tech. {{i.shorttitle}}</h2>
+            {% endfor %}
+        </div>
+    </div>
+    <div style="overflow: hidden; max-height: 60vw;">
+        {% for i in coursess %}
+        <div>
+            <p align="left" style=" font-size:1.3vw; margin-top:1.5vw; margin-left:1.5vw; width: 50vw; min-height:60vw ;">{{i.details}}
+            </p>
+        </div>
+
+        {% endfor %}
+        <div class="cll" >
+            <div class="aa">
+            </div>
+            <div class="ab">
+            </div>
+            <div class="ac">
+                <div class="headings">
+                    <h2>key information</h2>
+                </div>
+                <table class="table" >
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>
+                                    <h4>duration</h4>
+                                </li>
+                                {% for i in coursess %}
+                                <div class="headings2">
+                                    <h2 style="font-size: 2vw; position: relative; left: -5vw;">{{i.duration}}</h2>
+                                </div>
+                                
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <h4>Programe code</h4>
+                                </li>
+                                {% for i in coursess %}
+                                <div class="headings2">
+                                    <h2 style="font-size: 2vw; position: relative; left: -3vw;">{{i.programecode}}</h2>
+                                </div>
+                                
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>
+                                    <h4>Course type</h4>
+                                </li>
+                                {% for i in coursess %}
+                                <div class="headings2">
+                                    <h2 style="font-size: 2vw; position: relative; left: -1vw; width: 15vw;">{{i.coursetype}}</h2>
+                                </div>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <h4>Mode of study</h4>
+                                </li>
+                                {% for i in coursess %}
+                                <div class="headings2">
+                                    <h2 style="font-size: 2vw; position: relative; left: -3vw;">{{i.modeofstudy}}</h2>
+                                </div>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ul>
+                                <li>
+                                    <h4>Campus</h4>
+                                    <div class="headings2">
+                                        <h2 style="font-size: 2vw; position: relative; left: -3vw;">Kharghar-Navimumbai</h2>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ul>
+                                <li>
+                                    <h4>Institute</h4>
+                                    <div class="headings2">
+                                        <h2 style="font-size: 2vw; position: relative; left: -1vw;">Saraswati college of engineering</h2>
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

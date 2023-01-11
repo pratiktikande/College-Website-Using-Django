@@ -1,0 +1,1022 @@
+<!doctype html>
+{% load static%}
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/523da6d922.js" crossorigin="anonymous"></script>
+
+  <title>Saraswati college of Engineering</title>
+  <link href="{% static 'css/index1.css' %}" rel="stylesheet">
+  <style>
+    .back1 {
+      background-image:linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.705)),
+      url("{% static 'images/collegeback1.jpg' %}");
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    iframe {
+      height: 25vw;
+      width: 45vw;
+      /* box-shadow: 10vw 10vw 10vw 10vw rgba(245, 100, 100, 0.699); */
+    }
+
+    .containersport {
+      display: block;
+
+    }
+
+    #ele1 {
+      color: rgba(220, 20, 60, 0.795);
+      text-decoration: underline;
+      transition: color 0.5s linear;
+      font-family: -webkit-body;
+      cursor: pointer;
+    }
+
+    #ele2 {
+      color: gray;
+      transition: color 0.5s linear;
+      font-family: -webkit-body;
+      cursor: pointer;
+    }
+
+    #ele {
+      color: rgba(220, 20, 60, 0.795);
+    }
+
+    .containersport1 {
+      display: none;
+    }
+
+    .headings3 {
+      position: relative;
+      /* top: 1vw; */
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 2.5vw;
+      padding: 1vw;
+    }
+
+    .headings4 {
+      position: relative;
+      top: -2.8vw;
+      background-color: white;
+      width: 15vw;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .headings4 h4 {
+      color: rgba(220, 20, 60, 0.795);
+    }
+
+    .foot-btn {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      /* left: 17vw; */
+      /* top: 5vw; */
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="back1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="background-color: #60331205;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/web/">
+          <h4>Saraswati College</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>About us </h5>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/secretary">Secretary's message</a></li>
+                <li><a class="dropdown-item" href="/web/principal">Principal's message</a></li>
+                <li><a class="dropdown-item" href="/web/chairman">Chairman's message</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/news">News</a></li>
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/web/staff">
+                <h5>Staff</h5>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/web/staff/" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <h5>Academics</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for course,number in allsys %}
+                <div class="dropdown-toggl">
+                  <li><a class="dropdown-item" href="/web/bachlers/">{{course.0.dergree}}</a>
+                    <ul class="dropdown-menu m" aria-labelledby="navbarDropdown" style="padding: 0;">
+                      {% for i in course%}
+                      <li><a class="dropdown-item i" href="/web/{{i.id}}" id="qv{{i.id}}">{{i.title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                </div>
+                {% endfor %}
+                <div class="dropdown-toggl">
+                  <li><a class="dropdown-item" href="/web/elearning/">Other programs</a>
+                    <ul class="dropdown-menu m" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item i" href="#">IIT Bombay Remote Center</a></li>
+                      <li><a class="dropdown-item i" href="#">Centre of Excellence in Mechanical Modeling and
+                          Computing</a>
+                      </li>
+                    </ul>
+                  </li>
+                </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://www.youtube.com/channel/UCM14Iw97mnCoNZCI8knb5Uw/playlists?view=50&sort=dd&shelf_id=6">E-learning</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>Admissions</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Eligibility critera</a></li>
+                <li><a class="dropdown-item" href="/web/procedure/">Admision procedure</a></li>
+                <li><a class="dropdown-item" href="/web/calender/">Academic calender</a></li>
+                <li><a class="dropdown-item" href="/web/mhtcetcutoff/">Mhtcet cutoff</a></li>
+                <li><a class="dropdown-item" href="/web/admission/">Admission Form </a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/apply/">Apply</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>Students</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Council</a></li>
+                <li><a class="dropdown-item" href="/web/trips">Trips</a></li>
+                <li><a class="dropdown-item" href="#">Activities</a></li>
+                <li><a class="dropdown-item" href="#">Achivements</a></li>
+                <li><a class="dropdown-item" href="#">Announcement</a></li>
+
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Exam cell</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>Research</h5>
+
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/projects">Projects</a></li>
+
+                <li><a class="dropdown-item" href="/web/conference/">Conferrence </a></li>
+
+                <li><a class="dropdown-item" href="/web/publication">Publication</a></li>
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/patent/">Patent</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>Alumini</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/aluminis/">Our Aluminis</a></li>
+                <li><a class="dropdown-item"
+                    href="https://saraswati.truecopy.in/v2/files/submitdoctranscript.tc">Transcript</a>
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://www.youtube.com/playlist?list=PLsclj8qmz4dVdaQgigO8WfXQ5Li-THBvM">Alumini
+                    talk</a></li>
+                <li><a class="dropdown-item" href="/web/register">Alumini registration</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://www.youtube.com/playlist?list=PLsclj8qmz4dVdaQgigO8WfXQ5Li-THBvM">workshop and
+                    seminars
+                    conducted by alumini</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>Library</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/overview/">Overview</a></li>
+                <li><a class="dropdown-item" href="https://saraswatikharghar.knimbus.com/#/home">knimbus </a></li>
+                <li><a class="dropdown-item" href="#">Opac</a></li>
+                <li><a class="dropdown-item" href="/web/unisyllabus/">University syllabus</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/questions/">University question papers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <h5>Placement cell</h5>
+
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/web/companies">Our Recruiters
+                  </a></li>
+                <li><a class="dropdown-item" href="/web/placementtestmaterial/">Placement test resource
+                  </a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/web/placement">Placement Report</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/web/gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/web/blog">Blog</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">
+              <h5>Search</h5>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="back-main">
+
+      <h1 class="colname">saraswati </h1>
+      <h2 class="colname2">college</h2>
+      <div class="intro">
+        <h3 class="des" align="center" style="position: relative; top: 1vw; left: 0.4vw;">Welcome To The Best
+          Engineering College In Navi Mumbai.</h3>
+        <p align="center" style="position: relative; top: 2vw;">Saraswati College of Engineering is the leading
+          engineering institution in Navi Mumbai established in 2004.
+          We
+          aspire to be a leading research organization with a dream and vision of creating a knowledgeable society.
+          SCOE
+          is
+          provided with spacious buildings to accommodate reception, auditorium, office, classrooms, staff rooms,
+          drawing
+          halls, laboratories, workshop, library, computer center, conference halls, examination hall, recreation
+          center,
+          sports rooms, canteen, and placement cell. This facilities count us one of the Top Engineering college In
+          Navi
+          Mumbai.</p>
+      </div>
+      <!-- <div class="designcircle">
+      <img src="{% static 'images/teacher.svg'%}" class="teachersvg">
+    </div> -->
+    </div>
+  </div>
+  <div style="overflow: hidden;">
+    <div style="display: flex;">
+      <div style="position: relative; top: 10vw; left: 2vw; ">
+        <iframe title="Saraswati College of Engineering Campus Tour"
+          src="https://www.youtube.com/embed/B0yH3lBL8wM?feature=oembed" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div style=" overflow: hidden; width: 80vw; height: 50vw;">
+        <div
+          style="height: 40vw; width: 40vw; background-color: #e7e8e9; position: relative; left: 15vw; transform: translate(-6vw,2vw);">
+          <table>
+            <th>
+              <div class="headings">
+                <h2 style="font-family: -webkit-body; position: relative; left: 6vw;">What's New</h2>
+              </div>
+            </th>
+          </table>
+          <div style="overflow-y: scroll; height: 30vw;">
+            <table>
+              {% for i in message%}
+              <tr style=" border-bottom:  0.1vw solid rgba(0, 0, 0, 0.158);">
+                <td style="width: 10vw;">
+                  <h3 style="font-size: 1.5vw; position: relative; left: 1vw;  font-family: ui-serif;">{{i.date}}</h3>
+                </td>
+                <td>
+                  <hr style="transform: rotate(90deg); width: 2.5vw; position: relative; top: -0.5vw;">
+                </td>
+                <td style="width: 30vw;" align="center">
+                  <a href="{{i.link}}" style=" text-decoration: none; color: black;">
+                    <h3 style="font-size: 1.5vw; width: 28vw; left: -1vw; font-family: ui-serif;position: relative;">
+                      {{i.title}}</h3>
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+        <div style="position: relative; left: -4vw;">
+          <div
+            style="position: absolute; height: 40vw; width: 30vw; background-color: #b7202e; box-shadow: 1vw 1vw 4vw 8vw #b7202f93; left: 35vw; z-index: -1; top: -25vw;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="designhead" style="position: relative; margin-top: 4vw; min-height: 50vw;">
+    <div class="headings" style="position: relative; top: 1vw;">
+      <h2>Programmes & Admissions</h2>
+    </div>
+    <div class="design1cont">
+      <div class="design1">
+      </div>
+    </div>
+
+    <div class="course" style=" width:auto;top: 3vw;">
+      {% for course,number in allsys %}
+      <div class="course1">
+        <div class="container">
+          <div class="card card1" style="width: 28vw; height: 40vw; margin-left: 6vw;">
+            <div class="front" style="width: 28vw;">
+              {% if forloop.counter == 1 %}
+              <img src="{% static 'images/machinery.jpg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              {% endif %}
+              {% if forloop.counter == 2 %}
+              <img src="{% static 'images/research.jpg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              {% endif %}
+              <div class="card-body" style="margin: 0; padding: 1vw;">
+                <h4 class="card-title" style="font-size: 1.5vw;">{{course.0.dergree}}</h4>
+              </div>
+            </div>
+            <div class="back" style="width: 28.4vw; height: 60vw;">
+              <div class="course-links" style="height: 50vw;">
+                <h2>courses</h2>
+                {% for i in course%}
+                <h5><a class="course-a" href="/web/{{i.id}}">{{i.title}}</a></h5>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="pillars">
+    <div class="designheading">
+      <div class="headings">
+        <h2>Saraswati Engineering Pillars</h2>
+      </div>
+    </div>
+
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="top: -3vw;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="courousel-achiv">
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/infrastructure.jpeg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom: -0.5vw;">
+                <h4 class="card-title">Infrastructure</h4>
+              </div>
+            </div>
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/academic.jpg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom:-0.5vw;">
+                <a href="/web/calender/" style="text-decoration: none; color: white;">
+                  <h4 class="card-title">Academic flexibility</h4>
+                </a>
+              </div>
+            </div>
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/industrialvisit.jpeg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom:-0.5vw;">
+                <a href="/web/trips/" style="text-decoration: none; color: white;">
+                  <h4 class="card-title">Industrial Visit</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="courousel-achiv">
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/placement.jpg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom: -0.5vw;">
+                <a href="/web/placement/" style="text-decoration: none; color: white;">
+                  <h4 class="card-title">Placement Cell</h4>
+                </a>
+              </div>
+            </div>
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/gallery.jpg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom:-0.5vw;">
+                <a href="/web/gallery/" style="text-decoration: none; color: white;">
+                  <h4 class="card-title">Photo Gallery</h4>
+                </a>
+              </div>
+            </div>
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/alumini.jpeg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom: -0.5vw;">
+                <a href="/web/aluminis/" style="text-decoration: none; color: white;">
+                  <h4 class="card-title">Our Alumni</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="courousel-achiv">
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/event.jpg' %}" class="card-img-top" alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom: -0.5vw;">
+                <a href="/web/news/" style="text-decoration: none; color: white;">
+                  <h4 class="card-title">News</h4>
+                </a>
+              </div>
+            </div>
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/event.jpg' %}" class="card-img-top" alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom: -0.5vw;">
+                <a href="/web/companies/" style="text-decoration: none; color: white; font-size: 1vw;">
+                  <h4 class="card-title" style="font-size: 1.5vw;">International collaboration</h4>
+                </a>
+              </div>
+            </div>
+            <div class="card card1 pill" style="width: 23vw; height: 30vw;">
+              <img src="{% static 'images/exam cell.jpg' %}" class="card-img-top"
+                alt="{% static 'images/machinery.jpg' %}">
+              <div class="card-body" style="margin: 0; padding: 1vw; margin-bottom:-0.5vw;">
+                <a href="/web/examcell/" style="text-decoration: none; color: white;">
+                  <h4 class="card-title">Exam cell</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon preicon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon nexicon" aria-hidden="true" style="background-color: rgb(29, 82, 82);
+        position: relative;
+        top: 19vw;
+        font-size: 10vw;
+        left: -77.5vw;
+        height: 4vw;
+        width: 4vw;"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="ourcompanies" style="margin-top: 5vw; height: auto; min-height: 65vw; background-color: white;">
+    <div class="headings">
+      <h2 style="position: relative; top: 0vw;">Placement Highlights</h2>
+      <h4>Top companies are hiring from Saraswati Engineering College</h4>
+    </div>
+    <div class="design4">
+      <div class="infopro" style=" z-index:3;height: 50vw; width: 25vw; left: 5vw;">
+        <table class="infotable">
+          <tr>
+            <td>
+              <div class="tabledesign">
+                <div class="database">
+                  <h4>{{placement.0.highestpackage}} lakhs</h4>
+                </div>
+                <div class="tabledesign2">
+                  <h4 align="center">Highest package</h4>
+                </div>
+
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="tabledesign">
+                <div class="database">
+                  <h4>{{placement.0.averagepackage}} lakhs</h4>
+                </div>
+                <div class="tabledesign2">
+                  <h4 align="center">Average package</h4>
+                </div>
+
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="tabledesign">
+                <div class="database">
+                  <h4>{{placement.0.numberofplacement}} students</h4>
+                </div>
+                <div class="tabledesign2">
+                  <h4 align="center">Number of Placement</h4>
+                </div>
+
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="tabledesign">
+                <div class="database">
+                  <h4>{{placement.0.companies_visited}} students</h4>
+                </div>
+                <div class="tabledesign2">
+                  <h4 align="center">companies visiting</h4>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div
+        style="background-color: #0f47473f; width: 65vw; height: 50vw; left: 30vw; position: relative; overflow:scroll;">
+        <table style="position: relative; left: 2vw;">
+          <tr>
+            {% for i in place %}
+            <td style="padding: 1vw;">
+
+              <img src="/media/{{i.image}}" style="width: 10vw; height: 10vw;">
+            </td>
+            {% if forloop.counter|divisibleby:5 and forloop.counter > 0 and not forloop.last%}
+
+          </tr>
+          <tr>
+            {% endif %}
+
+            {% endfor %}
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mega-projects">
+    <div class="headings">
+      <h2>Mega Projects</h2>
+      <p>Here is what the best of student innovation looks like!<br>
+        Unleash your ambitions with our “Mega Projects”</p>
+    </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" style="top:-4vw;">
+        <div class="carousel-item active" data-bs-interval="10000">
+          {% for i in project %}
+          <div class="card-body megaprojectcardbody">
+            <div class="contain">
+              <div class="headings" style="left: -35vw; top: -5vw;">
+                <h2 style="position: relative; left: 1vw; top: 5vw;">{{i.name}}</h2>
+              </div>
+              <p style="position: relative; left: 2vw;margin: 1%; top: 1vw; width: 30vw; ">{{i.Achievements}}</p>
+              <img src='/media/{{i.image}}' alt="helo"
+                style="position: relative; left: 35vw;margin: 1%; height: 20vw; top: -20vw; width: 20vw; display: inline;"
+                class="img22">
+              <img src='/media/{{i.image1}}' alt="helo"
+                style="position: relative; left: 10vw;margin: 1%; height: 20vw; top: 3vw; width: 30vw; display: inline;"
+                class="img22">
+              <img src='/media/{{i.image2}}' alt="helo"
+                style="position: relative; left: 5vw;margin: 1%; height: 20vw; top: -20vw; width: 30vw; display: inline;"
+                class="img22">
+              <img src='/media/{{i.image3}}' alt="helo"
+                style="position: relative; left: 65vw;margin: 1%; height: 20vw; top: -20vw; width: 25vw; display: inline;"
+                class="img22">
+            </div>
+          </div>
+          {% if forloop.counter > 0 and not forloop.last %}
+        </div>
+        <div class="carousel-item " data-bs-interval="10000">
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon preeicon" style="position: relative; top: 5vw;"
+            aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon nexxicon" style="position: relative; top: 5vw;"
+            aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="sports" style="min-height: 115vw; position: relative;">
+    <div class="headings">
+      <h2 id="ele" style="display: inline;  position: relative;">Student Life @ Saraswati</h2>
+    </div>
+    <div class="headings3">
+      <h2 id="ele1" style="display: inline; left: -5vw; position: relative;">sports</h2>
+      <h2 id="ele" style="display: inline;">|</h2>
+      <h2 id="ele2" style="display: inline; left: 5vw; position: relative;">Infrastructure</h2>
+    </div>
+    <div class="containersport" id="sport1" style="position: absolute;">
+      <table class="sporttable">
+        <tr>
+          <td align="center">
+            <div class="s2" style="display: inline;">
+              <img src="{% static 'images/athletic-track.jpg' %}" class="img-top" alt="..."
+                style="width: 25vw; height: 20vw; display: inline;">
+              <div class="headings4">
+                <h4>Athletics</h4>
+              </div>
+            </div>
+          </td>
+          <td colspan="2" align="center">
+            <div class="s2" style="display: inline;">
+              <img src="{% static 'images/football.jpg' %}" class="img-top" alt="..."
+                style="width: 50vw; height: 20vw; display: inline;">
+              <div class="headings4">
+                <h4>Football</h4>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/carrom.jpg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>Carrom</h4>
+              </div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/kho-kho.jpg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>kho-kho</h4>
+              </div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/basketball.jpg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>Basketball</h4>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <div class="s3">
+              <img src="{% static 'images/volleyball.jpg' %}" class="img-top" alt="..." style="width:50vw;">
+              <div class="headings4">
+                <h4>Volleyball</h4>
+              </div>
+            </div>
+          </td>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/tennis.jpg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>Tennis</h4>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center">
+            <div class="s3">
+              <img src="{% static 'images/cricket.jpg' %}" class="img-top" alt="..." style="width: 75vw; height: 25vw;">
+              <div class="headings4">
+                <h4>Cricket</h4>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="containersport1" id="infra" style="position: absolute;">
+      <table class="sporttable">
+        <tr>
+          <td align="center">
+            <div class="s2" style="display: inline;">
+              <img src="{% static 'images/auditorium.jpg' %}" class="img-top" alt="..."
+                style="width: 25vw; height: 20vw; display: inline;">
+              <div class="headings4">
+                <h4>Auditorium</h4>
+              </div>
+
+            </div>
+          </td>
+          <td colspan="2" align="center">
+            <div class="s2" style="display: inline;">
+              <img src="{% static 'images/canteen.jpg' %}" class="img-top" alt="..."
+                style="width: 50vw; height: 20vw; display: inline;">
+              <div class="headings4">
+                <h4>Canteen</h4>
+              </div>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/Classroom.jpg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>Classroom</h4>
+              </div>
+
+            </div>
+          </td>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/Lab.jpeg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>Computer Lab</h4>
+              </div>
+
+            </div>
+          </td>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/Laboratory.jpg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>Laboratory</h4>
+              </div>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <div class="s3">
+              <img src="{% static 'images/library.png' %}" class="img-top" alt="..." style="width:50vw;">
+              <div class="headings4">
+                <h4>Reading Area</h4>
+              </div>
+
+            </div>
+          </td>
+          <td align="center">
+            <div class="s3">
+              <img src="{% static 'images/seminaar.jpg' %}" class="img-top" alt="...">
+              <div class="headings4">
+                <h4>Seminar Hall</h4>
+              </div>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center">
+            <div class="s3">
+              <img src="{% static 'images/nss1.jpg' %}" class="img-top" alt="..." style="width: 75vw; height: 25vw;">
+              <div class="headings4">
+                <h4>NSS</h4>
+              </div>
+
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  {% if number4 > 0 %}
+  <div class="forein-trip">
+    <div class="headings">
+      <h2>our trips</h2>
+      <p>Here is what the best of student trip looks like!<br>
+        Unleash your ambitions with our “Mega Trips”</p>
+    </div>
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-inner" style="top:-3vw;">
+        <div class="carousel-item active">
+          {% for i in trips %}
+          <!-- <div class="trip-card" style="width: 95vw; "> -->
+          <div class="card-body foreigntripcardbody">
+            <div class="contain">
+              <div class="headings" style="left: -35vw; top: -5vw;">
+                <h2 style="position: relative; left: 1vw; top: 5vw;">{{i.place}}</h2>
+              </div>
+              <p
+                style="position: relative; left: 2vw; margin: 1%; height: 20vw; top: 1vw; width: 30vw;font-family: math;">
+                {{i.details}}</p>
+              <img src='/media/{{i.image}}' alt="helo"
+                style="position: relative; left: 35vw; margin: 1%; height: 20vw; top: -29vw; width: 20vw; display: inline;"
+                class="img22">
+              <img src='/media/{{i.image1}}' alt="helo"
+                style="position: relative; left: 10vw;margin: 1%; height: 20vw; top: -6vw; width: 30vw; display: inline;"
+                class="img22">
+              <img src='/media/{{i.image2}}' alt="helo"
+                style="position: relative; left: 5vw;margin: 1%; height: 20vw; top: -29vw; width: 30vw; display: inline;"
+                class="img22">
+              <img src='/media/{{i.image3}}' alt="helo"
+                style="position: relative; left: 65vw;margin: 1%; height: 20vw; top: -30vw; width: 25vw; display: inline;"
+                class="img22">
+            </div>
+          </div>
+          {% if forloop.counter > 0 and not forloop.last %}
+        </div>
+        <div class="carousel-item " data-bs-interval="10000">
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon preeicon" aria-hidden="true"
+          style="position: relative; top: 8vw;"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon nexxicon" aria-hidden="true"
+          style="position: relative; top: 8vw;"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  {% endif %}
+  <div>
+    <div class="headings" style="top: 2vw;">
+      <h2>Continue Exploring Saraswati :-</h2>
+    </div>
+    <div class="extranav" style="position: relative; top: 2vw;">
+      <div class="nav1">
+        <div class="headings">
+          <a href="/web/gallery/" style="text-decoration: none;">
+            <h2 style="display: inline; position: relative;">Gallery</h2>
+          </a>
+        </div><i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="nav1">
+        <div class="headings">
+          <a href="/web/blog/" style="text-decoration: none;">
+            <h2 style="display: inline; position: relative; ">Blog</h2>
+          </a>
+        </div><i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="nav1">
+        <div class="headings">
+          <a href="/web/news/" style="text-decoration: none;">
+            <h2 style="display: inline; position: relative; left: 1vw;">News</h2>
+          </a>
+        </div><i class="fas fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="f7">
+      <div class="foot-1">
+        <div class="foot-1-1" id="f1">
+          <h3>ADMISSIONS</h3>
+          <a>Admissions</a>
+          <a>Programmes</a>
+        </div>
+        <div class="foot-1-1" id="f2" style="width: 22vw;">
+          <h3>STUDENT HELP</h3>
+          <a>International Tieups</a>
+          <a>Scholarships</a>
+          <a>Alumni Portal</a>
+        </div>
+      </div>
+      <div class="foot-2" id="f3">
+        <h3>QUICK LINKS</h3>
+        <a> My Account Portal</a>
+        <a>Email Login</a>
+        <a>ESS Login</a>
+      </div>
+      <div class="foot-3" id="f4">
+        <div class="foot-1-1" id="f5">
+          <h3>EXPLORE</h3>
+          <a>Sports Academy</a>
+          <a>SCEL</a>
+          <a>riidl</a>
+          <a>Research</a>
+        </div>
+        <div class="foot-1-1 foot-1-2" id="f6">
+          <h3 style="width: 22vw;">GET IN TOUCH</h3>
+          <a>Maps & Directions</a>
+          <a>Faculty Directory</a>
+          <a>Emergency</a>
+          <a>News & Media</a>
+          <a>Events & Updates</a>
+          <a>Gallery</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-btn">
+          <a class="btn btn-primary" href="/web/apply/" role="button">Apply</a>
+          <a class="btn btn-primary" href="/web/gallery" role="button">Gallery</a>
+          <a class="btn btn-primary" href="/web/blog/" role="button">Blog</a>
+        </div>
+      </div>
+    </div>
+    <div class="icons-main">
+      <div class="icons">
+        <img src="{% static 'images/facebook.png'%}" class="icon">
+        <img src="{% static 'images/instagram1.png'%}" class="icon">
+        <img src="{% static 'images/twitter1.png'%}" class="icon">
+        <img src="{% static 'images/youtube.png'%}" class="icon">
+      </div>
+      <div class="last-nav">
+        <a>about us</a>
+        <a>terms & condition</a>
+        <a>privacy & policies</a>
+      </div>
+      <div class="creater">
+        <h4>Created by manish </h4>
+      </div>
+    </div>
+  </footer>
+  <script>
+    let ele1 = document.getElementById('ele1');
+    let ele2 = document.getElementById('ele2');
+    let sport = document.getElementById('sport1');
+    let infra = document.getElementById('infra');
+
+    ele1.addEventListener('click', () => {
+       infra.style.display = 'none';
+      sport.style.display = 'block';
+      ele1.style.color = 'rgba(220, 20, 60, 0.795)';
+      ele1.style.textDecoration = 'underline';
+      ele2.style.color = 'gray';
+      ele2.style.textDecoration = 'none';
+
+    });
+    ele2.addEventListener('click', () => {
+      sport.style.display = 'none';
+      infra.style.display = 'block';
+      ele2.style.color = 'rgba(220, 20, 60, 0.795)';
+      ele2.style.textDecoration = 'underline';
+      ele1.style.color = 'gray';
+      ele1.style.textDecoration = 'none';
+    });
+  </script>
+
+  <!-- <canvas id="myChart" width="1474" height="736" style="display: block; box-sizing: border-box; height: 368px; width: 737px;"></canvas> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

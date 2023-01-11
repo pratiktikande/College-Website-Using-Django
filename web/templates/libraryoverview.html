@@ -1,0 +1,58 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+.secretary{
+    display: inline;
+    position: relative;
+    left: 63vw;
+    top: -29vw;
+    height: 30vw;
+    width: 35vw;
+    border-radius: 2%;
+    }
+    .intro {
+    height: 22vw;
+    width: 40vw;
+    background-color: rgba(240, 248, 255, 0.578);
+    position: relative;
+    /* display: inline; */
+    top: -26vw;
+    left: 57vw;
+    border-radius: 10%;
+    overflow: hidden;
+    z-index: 1;
+    }
+
+    .designheading{
+        background-color:rgba(220, 20, 60, 0.195);
+    }
+    
+        {% endblock %}
+        {% block body %}
+
+    <div style="height: 40vw; position: relative; top: 3vw;">
+        <div class="designheading">
+            <div class="headings">
+                <h2>SCOE Central Library Overview</h2>
+            </div>
+        </div>
+        <h3 class="des"></h3>
+        <!-- <span style="font-size: 5vw; position: relative; top: -4vw; display: inline;">"</span> -->
+        <p align="centre" style="font-size: 1.5vw; text-align: center;  position: relative; top: -2vw; width: 60vw;">The
+            Saraswati College of Engineering has an extraordinary library with a variety of old author books, it was
+            settled in 2004. The library is furnished with a smart computerized lab, handwritten books, international
+            references with smart new technologies. Saraswati College library is fully stabilized with OPAC, internet,
+            re-programming, CD-ROM.E-journal facility is available such that to provide a competitive edge to the
+            students and staff. The working hours of the library on six days of the week from 8 am. To 8 pm. Sunday off
+            providing other facilities of the reading hall, reference section and stack room to the users. SCOE Library:
+            Library is the place where the brain got the power to make creativity. The library is related to
+            rushi-munies which represent the great knowledge of culture and past. The warm environment of the library is
+            very helpful to make a person knowledgeable. Saraswati College of Engineering provides many platforms and
+            learning resources to make your carrier goal.
+
+
+        </p>
+        <img src="{% static 'images/library.png'%}" class="secretary">
+        <!-- <span style="font-size: 5vw; position: relative; top: -7vw; right:-50vw; display: inline;">"</span> -->
+    </div>
+    {% endblock %}

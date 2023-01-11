@@ -1,0 +1,130 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+{% endblock %}
+{% block body %}
+    <div class="designheading">
+        <div class="headings">
+            <h2>university Question paper</h2>
+        </div>
+    </div>
+    <div style="overflow: hidden;  height: 100%;">
+        <div class="maincontain">
+            <div class="contain">
+                <div class="designheading">
+                    <div class="headings">
+                        <h2>First Year Question paper</h2>
+                    </div>
+                </div>
+                <table style="font-size: 1.3vw; text-align: center;  position: relative;  width: 80vw; ">
+                    <tr style="border: 0.1vw solid black;">
+                        {% if number2 > 0 %}
+                        <th style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 30vw;">
+                            <h3>SEM I</h3>
+                        </th>
+                        <th style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);width: 30vw;">
+                            <h3 align="center">year</h3>
+                        </th>
+                        <th style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);width: 30vw;">
+                            <h3 align="center">links</h3>
+                        </th>
+                    </tr>
+
+                    {% for firstyearquestion,numberofsyl2 in allfysys%}
+                    <tr>
+                        <td class="td1"
+                            style="font-size: 1.5vw;border: 0.1vw solid black; position: relative;">
+                            <h4>{{firstyearquestion.0.sem}}</h4>
+
+                        </td>
+                        <td class="td1"
+                            style="font-size: 1.5vw;border: 0.1vw solid black; position: relative;">
+                            {% for i in firstyearquestion%}
+                            <h4>{{i.year}}</h4>
+                            <hr style="height: 0.1vw; width: 28vw;">
+                            {% endfor %}
+                        </td>
+                        <td style="border: 0.1vw solid black;">{% for i in firstyearquestion%}
+                            <a href="{{i.link}}">
+                                <h4 align="center">link</h4>
+                                <hr style="height: 0.1vw; width: 28vw;">
+                            </a>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </table>
+                {% if number2 == 0 %}
+                <h5 style="color: #603212e3; position: relative; left: -8vw; top:-1vw;" align="center">There is no data
+                    available</h5>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="maincontain" style="margin-top: 1vw; margin-bottom: 2vw;">
+
+            <div class="contain">
+                {% for question,numberofsyl in allsys1%}
+                <div class="designheading">
+                    <div class="headings">
+                        <h2>{{question.0.branch}}</h2>
+                    </div>
+                </div>
+                <table style="font-size: 1.3vw; text-align: center;   position: relative; top: 2vw; width: 80vw; ">
+                    <tr style="border: 0.1vw solid black;">
+                        <th
+                            style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 20vw;">
+                            <h3>Branch</h3>
+                        </th>
+                        <th
+                            style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 40vw;">
+                            <h3>Title</h3>
+                        </th>
+                        <th
+                            style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 25vw;">
+                            <h3 style="width: 25vw;" align="center">links</h3>
+                        </th>
+                    </tr>
+                    <tr>
+
+                        <td class="td1" style="font-size: 1.5vw; position: relative; border: 0.1vw solid black;">
+                            {% for i in question %}
+                            <h4>{{i.year}}</h4>
+                            <hr style="height: 0.1vw; width: 20vw;">
+                            {% endfor %}
+                        </td>
+                        <td class="td1" style="font-size: 1.5vw; position: relative; border: 0.1vw solid black;">
+                            {% for i in question %}
+                            <h4>{{i.sem}}</h4>
+                            <hr style="height: 0.1vw; width: 40vw;">
+                            {% endfor %}
+
+                        </td>
+                        <td style="font-size: 1.5vw; position: relative; border: 0.1vw solid black;">
+                            {% for i in question %}
+                            <a href="{{i.link}}">
+                                <h4 style="width: 25vw; " align="center">link</h4>
+                            </a>
+                            <hr
+                                style="height: 0.1vw; width: 25vw; text-decoration: dotted; color: black; background-color: black;">
+                            {% endfor %}
+                        </td>
+                    </tr>
+
+                    {% if number == 0 %}
+                    <tr>
+                        <td colspan="3">
+                            <h5 style="color: #603212e3; position: relative; left: -3vw; top:1vw; font-size: 2vw;"
+                                align="center">There is no
+                                data
+                                available</h5>
+                        </td>
+                    </tr>
+                    {% endif %}
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}

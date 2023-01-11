@@ -1,0 +1,173 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+
+        .carousel-control-next-icon {
+            background-color: rgba(29, 82, 82, 0.5);
+            position: relative;
+            top: 20vw;
+            font-size: 10vw;
+            left: -80.5vw;
+            height: 4vw;
+            width: 4vw;
+            z-index: 10;
+        }
+
+        .carousel-control-prev-icon {
+            background-color: rgba(29, 82, 82, 0.534);
+            position: relative;
+            top: 20vw;
+            font-size: 30vw;
+            height: 4vw;
+            width: 4vw;
+        }
+
+        .designheading1 {
+            display: inline;
+            margin: 2vw;
+            /* background-color:  rgb(38, 192, 192); */
+        }
+
+        .divtable {
+            margin-left: 0.5vw;
+            /* margin-right: 0.5vw; */
+            height: 30vw;
+            background-color: rgba(255, 0, 0, 0.055);
+        }
+
+        .infotable {
+            display: inline;
+            position: relative;
+            /* left: 1vw; */
+        }
+
+        .infotable tr td {
+            padding: 0.8vw;
+        }
+
+        .tabledesign {
+            background-color: white;
+            height: 13vw;
+            width: 29.5vw;
+
+        }
+
+        .tabledesign2 {
+            display: inline;
+            position: relative;
+            top: 8vw;
+            /* margin-left: 2.5vw; */
+        }
+
+        .database {
+            display: inline;
+            position: relative;
+            top: 5vw;
+            left: 10vw;
+            /* height: auto; */
+        }
+        .mega-projects {
+            margin-top: 4vw;
+            max-height: 60vw;
+            /* overflow: hidden; */
+            background-color: #f3f9fc;
+            }
+            .headings {
+                position: relative;
+                /* top: 1vw; */
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 2.5vw;
+                padding: 1vw;
+              }
+        {% endblock %}
+        {% block body %}
+    <div class="designheading1" style="width: 50vw;">
+        <div class="card-body headings " style="height: 15vw; position:relative; top:4vw;">
+            <h2 align="center">SCOE Council</h2>
+            <!-- <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h4> -->
+            <h4 class="card-text" align="center">The Focus of Saraswati College council is to generate the fealing  of equality and to make college life more enjoyable as well as more worthy</h4>
+            <!-- <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a> -->
+        </div>
+    </div>
+    <div class="maincontain">
+        <div class="contain">
+            <div id="carouselExampleControls" class="carousel " data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="contain">
+                            {% if number > 0 %}
+                            {% for i in staff_details%}
+                            <div class="mega-projects">
+                                <div class="designheading">
+                                    <div class="headings">
+                                        <h2>Our Council members</h2>
+                                    </div>
+                                    <div class="design3">
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <div class="infopro">
+                                        <img src="/media/{{i.image}}" alt="helo" class="img22" style="height: 25vw; width: 30vw;position: relative; top: -1vw; left: 3vw;">
+                                    </div>
+                                    <div class="sport-card" style="width: 80vw; position: relative; left: 10vw;">
+                                        <div class="card-body mm">
+                                            <div class="contain">
+                                                <div class="headings" style="justify-content: left;
+                                                text-align: left;">
+                                                    
+                                                <h2 style="position: relative;display: inline;">Name :<h3
+                                                        style="position: relative;display: inline; font-size: 2.8vw; margin-left: 1vw;">{{i.name}}
+                                                    </h3>
+                                                </h2>
+                                                <h2 style="margin-top: 3vw; position: relative; ">Date :
+                                                    <h4 style="position: relative; top: -3vw; left: 10vw;">{{i.Date_of_joining}}</h4></h2>
+                                                <h2 style="margin-top: 1vw; position: relative; ">Review by students :<p
+                                                        style=" font-size:1.3vw; color: black; margin-top: 1vw; position: relative; left: 10vw; width: 50vw;">
+                                                        {{i.review}}</p>
+                                                </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last%}
+                    <div class="carousel-item">
+                        <div class="contain">
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:1 and forloop.counter > 0 and not forloop.last%}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if number > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if number == 0 %}
+    <div class="designheading">
+        <div class="headings">
+            <h2>Our Council members</h2>
+        </div>
+    </div>
+    <h5 style="color: #603212e3; position: relative; left: -1vw; top:1vw;" align="center">There is no Details available
+        regarding staff</h5>
+    {% endif %}
+    {% endblock %}

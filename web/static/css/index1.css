@@ -1,0 +1,740 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  /* box-sizing: border-box; */
+}
+nav {
+  z-index: 2;
+  /* background-color: #603312; */
+}
+.btn-outline-success {
+  color: white;
+  /* border-color: #198754; */
+}
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #60331205;
+}
+.me-2 {
+  margin-right: 0.5vw !important;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 0.375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #ffffff47;
+  background-clip: padding-box;
+  border: 1px solid #ced4da3b;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #f9fafb;
+}
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0;
+  vertical-align: 0.255em;
+  border-top: 0.3VW solid;
+  border-right: .3VW solid transparent;
+  border-bottom: 0;
+  border-left: .3VW solid transparent;
+}
+
+/* main page */
+.back-main {
+  /* background-image:linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.705)) */
+  /* url("{% static 'images/collegeback1.jpg' %}"); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 55vw;
+  min-height: 20vw;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+  position: relative;
+  top: -5vw;
+  overflow: hidden;
+}
+
+.colname {
+
+  font-size: 12vw;
+  position: relative;
+  top: 19vw;
+  font-style: italic;
+  /* display: none; */
+  font-family: ui-monospace;
+  display: inline;
+}
+.colname2 {
+  font-size: 5vw;
+  position: relative;
+  top: 24vw;
+  left: -15vw;
+  display: inline;
+  font-style: italic;
+}
+.des {
+  font-size: 2.5vw;
+  position: relative;
+  /* top: 15vw; */
+  left: 1vw;
+}
+.intro {
+  height: 22vw;
+  width: 40vw;
+  background-color: rgba(240, 248, 255, 0.178);
+  position: relative;
+  /* display: inline; */
+  top: 18vw;
+  left: 56vw;
+  border-radius: 10%;
+  overflow: hidden;
+  z-index: 1;
+}
+.card1 {
+  background-color: rgba(0, 0, 0, 1);
+  color: bisque;
+  text-align: center;
+  height: 50vw;
+  box-sizing: border-box;
+  width: 20vw;
+  height: 25vw;
+  transform-style: preserve-3d;
+  transition: all 2s linear;
+  border-top-left-radius: 11%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 4%;
+  border-bottom-right-radius: 4%;
+}
+.card-body {
+  padding: 0;
+}
+.course {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  transform: translate(0, -3vw);
+  position: relative;
+  /* left: 10vw; */
+  width: auto;
+}
+.course1 {
+  position: relative;
+  margin: 0vw 5vw;
+  left: 4vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.card-img-top {
+  height: 35vw;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+.front,
+.back {
+  height: 25vw;
+  width: 23vw;
+  /* position: absolute; */
+  font-size: 3vw;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 4%;
+  border-bottom-right-radius: 4%;
+}
+
+.front {
+  background-color: black;
+  z-index: 3;
+  backface-visibility: hidden;
+}
+
+.back {
+  background-color: black;
+  z-index: 4;
+  position: relative;
+  top: 15vw;
+  left: -0.3vw;
+  transition: transform 1s linear;
+  /* transform: rotateY(180deg); */
+}
+
+.card1:hover .back {
+  transform: translateY(-40vw);
+}
+.back h5 {
+  margin: 0.4vw;
+  text-align: left;
+}
+ /* college pillars */
+.pillars {
+  margin-top: 3vw;
+  margin-left: 1vw;
+  position: relative;
+  top: 1vw;
+  /* margin: 1vw; */
+  /* background-color: blueviolet; */
+  height: 45vw;
+  overflow: hidden;
+  width: 98%;
+  border-radius: 1vw;
+  border: 0.2vw solid #603312;
+  box-shadow: 0.5vw 1vw #603312;
+}
+.pill {
+  font-size: 3vw;
+  transform-style: preserve-3d;
+  transition: all 2s linear;
+  left: -7%;
+  margin-left: 11%;
+}
+.courousel-achiv {
+  display: flex;
+  margin: 2%;
+  justify-content: center;
+}
+.sport-card {
+  /* margin: 2%; */
+  height: 30vw;
+  display: inline;
+}
+.img-top {
+  height: 20vw;
+  width: 25vw;
+  margin: 0.5vw;
+}
+
+/* footer  */
+
+.foot {
+  /* display: flex; */
+  position: relative;
+  margin: 0.5%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+  background-color: rgba(165, 42, 42, 0.829);
+  background-color: #603212e3;
+  font-size: 1.2vw;
+}
+
+.foot-1 {
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.foot-2 {
+  margin-top: 2%;
+  display: flex;
+  position: relative;
+  left: 10vw;
+  flex-direction: column;
+  color: white;
+}
+
+.foot-3 {
+  margin: 1%;
+  display: flex;
+  position: relative;
+  left: 20vw;
+  flex-direction: column;
+  color: white;
+}
+
+.foot-1-1 {
+  margin: 10%;
+  /* padding-left: 20%; */
+  display: flex;
+  flex-direction: column;
+
+}
+
+.foot-1-1 h3 {
+  font-size: 2vw;
+  color: white;
+}
+
+.foot-2 h3 {
+  font-size: 2vw;
+  color: white;
+}
+
+#f2 {
+  margin-top: 30%;
+}
+
+#f6 {
+  margin-top: 30%;
+}
+
+.f7 {
+  display: flex;
+  /* justify-content: space-between; */
+  margin: 5%;
+
+}
+
+.icons-main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+.icon {
+  margin-left: 1%;
+  height: 3vw;
+  width: 3vw;
+}
+
+.last-nav a {
+  margin-left: 1%;
+  font-size: 1vw;
+  color: white;
+}
+
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+  color: white;
+  text-decoration: none;
+}
+
+.creater {
+  font-family: cursive;
+  color: white;
+}
+
+.foot-btn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 23vw;
+  top: 5vw;
+
+}
+
+.foot-btn a {
+  font-family: sans-serif;
+  border-color: black;
+  background-color: rgba(0, 0, 0, 0.219);
+  position: relative;
+  /* justify-content: center; */
+  /* text-align: center; */
+  align-content: center;
+  font-size: 1.5vw;
+  margin-top: 50%;
+  padding-top: 20%;
+
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 0.1vw solid white;
+  padding: 0.375vw 0.85vw;
+
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.tripcollage {
+  display: flex;
+}
+/* only for design */
+.design1 {
+  background-color: #b7202e;
+  ;
+  height: 38vw;
+  width: 30vw;
+  /* border-bottom-right-radius: 10vw; */
+  /* border-top-right-radius: 10vw; */
+  position: absolute;
+  left: 0;
+  margin: 0.5vw;
+  box-shadow: 6vw 0.1vw #ed1c24;
+  /* transform: skewX(-20deg); */
+  /* border: 1vw solid red; */
+  z-index: -10;
+}
+
+.design1cont {
+  position: relative;
+  transform: translate(-10vw, 4vw);
+
+}
+.headings {
+  position: relative;
+  /* top: 1vw; */
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2.5vw;
+  padding: 1vw;
+}
+
+.headings h2 {
+  color: rgba(220, 20, 60, 0.795);
+}
+
+.designheading {
+  /* margin-top: 3vw; */
+  background-color: rgba(255, 0, 0, 0.020);
+}
+
+.ourcompanies {
+  margin-top: 4vw;
+  background-color: rgba(255, 0, 0, 0.020);
+  height: 47vw;
+  width: 98vw;
+  overflow: hidden;
+  border-bottom-left-radius: 0vw;
+  border-bottom-right-radius: 10vw;
+  box-shadow: 0.5vw 0.8vw #603312;
+  margin-left: 0;
+}
+
+.sports {
+  margin-top: 4vw;
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.020);
+}
+
+.mega-projects {
+  margin-top: 4vw;
+  max-height: 60vw;
+  /* overflow: hidden; */
+  background-color: #f3f9fc;
+}
+
+.forein-trip {
+  margin-top: 5vw;
+  max-height: 60vw;
+  background-color: #f5f6f6c4;
+  /* overflow: hidden; */
+}
+
+.carousel-control-prev-icon {
+  background-color: rgb(29, 82, 82);
+  position: relative;
+  top: 20vw;
+  font-size: 30vw;
+  height: 4vw;
+  width: 4vw;
+}
+.preicon {
+  background-color: rgb(29, 82, 82);
+  position: relative;
+  top: 19vw;
+  font-size: 30vw;
+  height: 4vw;
+  width: 4vw;
+}
+
+.carousel-control-next-icon {
+  background-color: rgb(29, 82, 82);
+  position: relative;
+  top: 20vw;
+  font-size: 10vw;
+  left: -79.5vw;
+  height: 4vw;
+  width: 4vw;
+}
+
+.container {
+  padding: 0%;
+}
+.infopro {
+  background-color: #603312;
+  height: 46vw;
+  width: 30vw;
+  position: absolute;
+  margin: 0.1vw;
+  color: white;
+  font-size: 3vw;
+  z-index: -1;
+  transform: translateY(0vw);
+}
+
+.poss {
+  position: relative;
+  left: -22vw;
+  transform: translatey(0vw);
+  z-index: -10;
+}
+.megaprojectcardbody {
+  flex: 0 0 auto;
+  padding: 0rem 0vw;
+  left: 4vw;
+  position: relative;
+
+}
+
+.foreigntripcardbody {
+  flex: 0 0 auto;
+  padding: 0;
+  left: 3vw;
+  position: relative;
+  min-height: 40vw;
+}
+.sporttable {
+  display: inline;
+  position: relative;
+  /* background-color: aqua; */
+  left: 10vw;
+  transform: translateX(40vw);
+}
+
+h1 {
+  font-size: 5vw;
+}
+
+h2 {
+  font-size: 4vw;
+}
+
+h2 {
+  font-size: 3vw;
+  margin-bottom: 0.1vw;
+}
+
+h4 {
+  font-size: 2vw;
+  margin-bottom: 0;
+}
+
+h5 {
+  font-size: 1.3vw;
+}
+
+nav h5 {
+  font-size: 1.1vw;
+  display: inline;
+}
+
+p {
+  font-size: 1vw;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px
+}
+
+.extranav {
+  width: 96vw;
+  margin: 1vw;
+  height: 20vw;
+  display: flex;
+  background-color: #603212e0;
+}
+
+.nav1 {
+  width: 30vw;
+  position: relative;
+  top: 7vw;
+  margin: 1vw;
+  height: 5vw;
+  background-color: white;
+
+}
+.nav1 h2{
+  color: #603312c9;
+}
+.company-courousel {
+  display: inline;
+}
+
+.divtable {
+  margin-left: 0.5vw;
+  /* margin-right: 0.5vw; */
+  height: 30vw;
+  background-color: rgba(255, 0, 0, 0.055);
+}
+
+.infotable {
+  display: inline;
+  position: relative;
+  /* left: 1vw; */
+}
+
+.infotable tr td {
+  padding: 0.8vw;
+}
+
+.tabledesign {
+  /* background-color: rgba(255, 255, 255, 0.171); */
+  height: 10vw;
+  width: 23.5vw;
+
+}
+
+.tabledesign2 {
+  display: inline;
+  position: relative;
+  top: 5vw;
+  color: black;
+  /* margin-left: 2.5vw; */
+}
+
+.database {
+  display: inline;
+  position: relative;
+  top: 3vw;
+  left: 10vw;
+  /* height: auto; */
+}
+
+.m {
+  /* position: absolute; */
+  /* display: none; */
+  position: relative;
+  display: none;
+  text-decoration: none;
+}
+
+nav h5 {
+  /* font-size: 2.5vw; */
+  color: white;
+}
+
+.dropdown-toggle::after {
+  color: white;
+}
+
+.course-a {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (min-width:770px) {
+  .dropdown-toggl :hover .m {
+    display: inline;
+    position: absolute;
+    left: 8.6vw;
+    top: 1vw;
+    /* background-color: gray; */
+
+  }
+}
+
+@media screen and (max-width:770px) {
+  nav h5 {
+    font-size: 3.5vw;
+    color: white;
+  }
+
+}
+
+@media screen and (max-width:990px) {
+  .m {
+    /* position: absolute; */
+    /* display: none; */
+    position: relative;
+    display: inline;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: white;
+  }
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.05vw 2.1vw;
+    clear: both;
+    font-size: 2vw;
+
+  }
+
+  .dropdown-toggl {
+    width: 90vw;
+    overflow: hidden;
+  }
+
+  .i {
+    display: inline;
+    position: relative;
+    left: 9vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    font-size: 3vw;
+    /* width: 10vw; */
+  }
+
+  ul {
+    padding-inline-start: 0px;
+  }
+}
+
+.fas {
+  position: absolute;
+  left: 27vw;
+  top: 1.5vw;
+  font-size: 2vw;
+  width: 2vw;
+}
+
+navbar-toggler {
+  padding: 0.15vw 0.35vw;
+  font-size: 1vw;
+  line-height: 1;
+  background-color: transparent;
+  border: -0.6vw solid transparent;
+  border-radius: 1.25vw;
+  transition: box-shadow .15s ease-in-out;
+}
+
+.navbar-light .navbar-toggler-icon {
+  /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e); */
+  height: 5vw;
+  width: 5vw;
+}
+
+.back h5 {
+  margin: 0.9vw 0.2vw;
+  text-align: left;
+  font-size: 1.6vw;
+  font-family: cursive;
+  width: 27.5vw;
+  text-align: center;
+}
+
+.mega-projects p,
+.forein-trip p {
+  font-size: 1.5vw;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: serif;
+}

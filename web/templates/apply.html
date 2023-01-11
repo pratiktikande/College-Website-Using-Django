@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+  <style>
+    h1 {
+      font-size: 5vw;
+    }
+
+    h2 {
+      font-size: 4vw;
+    }
+
+    h3 {
+      font-size: 3vw;
+      margin-bottom: 0.1vw;
+    }
+
+    h4 {
+      font-size: 1vw;
+      margin-bottom: 0;
+    }
+
+    h5 {
+      font-size: 1.3vw;
+    }
+
+    .headings {
+      position: relative;
+      /* top: 1vw; */
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 0.5vw;
+      /* padding: 1vw; */
+    }
+
+    .headings1 {
+      position: relative;
+      /* top: 1vw; */
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 1vw;
+      /* padding: 1vw; */
+    }
+
+    .headings1 h2 {
+      color: rgba(220, 20, 60, 0.795);
+    }
+
+    .headings h4 {
+      color: rgba(220, 20, 60, 0.795);
+    }
+
+    @media screen and (min-width:768px) {
+      .col-md-4 {
+        width: 50%;
+        /* margin-top: 2vw; */
+      }
+
+      .col-md-3 {
+        width: 100%;
+        /* margin-top: 2vw; */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height: 10vw; background-color: black; width: 10vw;">
+    <a href="/web/"><img src="" alt="navbar"></a>
+  </div>
+  <div style="overflow: hidden; width: 100vw; height: 40.8vw;">
+    <div
+      style="position: relative; height: 45vw; width: 70vw; background-color: #b7202e;transform: translate(0vw,-2vw);">
+    </div>
+    <div
+      style="position: relative; height: 45vw; width: 70vw; background-color: #ed1c24;transform: translate(40vw,-49vw); z-index: -1;">
+    </div>
+    <div style="height: 40vw; width: 80vw; background-color: white; transform: translate(10vw,-88vw);">
+      <div>
+        <div class="headings1">
+          <h2>Apply</h2>
+        </div>
+        <form class="row g-3" style="margin: 1vw;" method="post">  {% csrf_token %} 
+          <input type="hidden" name="itemsJson" id="itemsJson">
+          <div class="col-md-4">
+            <label for="validationDefault01" class="form-label">
+              <div class="headings">
+                <h4>First name</h4>
+              </div>
+            </label>
+            <input type="text" class="form-control" id="validationDefault01" name="firstname" value="Mark" required>
+          </div>
+          <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">
+              <div class="headings">
+                <h4>Last name</h4>
+              </div>
+            </label>
+            <input type="text" class="form-control" id="validationDefault02" name="lastname" value="Otto" required>
+          </div>
+          <div class="col-md-6">
+            <label for="validationDefault03" class="form-label">
+              <div class="headings">
+                <h4>City</h4>
+              </div>
+            </label>
+            <input type="text" class="form-control" id="validationDefault03" name="city" required>
+          </div>
+          <div class="col-md-6">
+            <label for="validationDefault03" class="form-label">
+              <div class="headings">
+                <h4>Contact Number</h4>
+              </div>
+            </label>
+            <input type="tel" class="form-control" id="validationDefault03" name="contact" required>
+          </div>
+          <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">
+              <div class="headings">
+                <h4>Date</h4>
+              </div>
+            </label>
+            <input type="text" class="form-control" id="validationDefault03" name="date" required>
+          </div>
+          <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">
+              <div class="headings">
+                <h4>Course</h4>
+              </div>
+            </label>
+            <select class="form-select" id="validationDefault04" name="course" required>
+              <option selected disabled value="">Choose...</option>
+              <option value="Automobile Engineering">Automobile Engineering</option>
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Computer Engineering">Computer Engineering</option>
+              <option value="Electronics &amp; Telecommunications Engineering">Electronics &amp; Telecommunications
+                Engineering
+              </option>
+              <option value="Information Technology">Information Technology</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+
+            </select>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+              <label class="form-check-label" for="invalidCheck2">
+                Agree to terms and conditions
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

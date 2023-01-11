@@ -1,0 +1,128 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+.design3 {
+/* background-color: #a7122bd2; */
+height: 40vw;
+width: 98vw;
+border-bottom-right-radius: 4vw;
+border-top-right-radius: 4vw;
+position: absolute;
+left: 0;
+margin: 0.5vw;
+box-shadow: 0.5vw 1vw #603312;
+/* border: 1vw solid red; */
+z-index: -10;
+}
+
+.infopro {
+background-color: #603312;
+height: 46vw;
+width: 30vw;
+position: absolute;
+margin: 0.1vw;
+color: white;
+font-size: 3vw;
+z-index: 1;
+transform: translateY(-5vw);
+}
+
+table p {
+width: 40vw;
+}
+
+/* table tr {
+margin-top: 10vw;
+} */
+
+/* table tr h1 {
+margin-top: 3vw;
+} */
+.img {
+height: 15vw;
+width: 20vw;
+position: relative;
+}
+
+.mm {
+flex: 0 0 auto;
+padding: 0rem 3vw;
+left: 28vw;
+position: relative;
+}
+
+.contain {
+display: inline;
+position: relative;
+left: 6.3vw;
+
+}
+
+.contain h3 {
+margin-left: 2%;
+}
+
+.contain h5 {
+margin-left: 2%;
+}
+
+.maincontain {
+height: auto;
+/* margin: 1vw; */
+overflow: hidden;
+}
+
+table {
+display: inline;
+}
+
+.td1 {
+height: 2vw;
+}
+
+th,
+td {
+padding: 0.8vw;
+}
+{% endblock %}
+{% block body %}
+<div style="margin-top: 3vw;">
+  <div class="headings">
+    <h2>Academic calender</h2>
+  </div>
+  <div class="maincontain">
+    <div class="contain">
+      <table style="font-size: 1.3vw; text-align: center;  position: relative;  width: 80vw; ">
+        <tr>
+          {% if number > 0 %}
+          <th
+            style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 20vw;  border: 0.2vw solid black;">
+            <h3>year</h3>
+          </th>
+          <th
+            style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253); width: 25vw;   border: 0.2vw solid black;">
+            <h3 style="width: 40vw;" align="center">calender</h3>
+          </th>
+        </tr>
+        {% for i in calender%}
+        <tr style="  border: 0.1vw solid rgba(0, 0, 0, 0.63);">
+          <td class="td1" style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);">
+            <h4 style="width: 40vw; text-align: center;">{{i.year}}</h4>
+          </td>
+          <td>
+            <a href="{{i.link}}">
+              <h4 style="width: 45vw;" align="center">link</h4>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+      </table>
+      {% if number == 0 %}
+      <h5 style="color: #603212e3; position: relative; left: -8vw; top:-1vw;" align="center">There is no data
+        available</h5>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

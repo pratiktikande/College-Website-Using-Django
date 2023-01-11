@@ -1,0 +1,61 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+.secretary{
+    display: inline;
+    position: relative;
+    left: 63vw;
+    top: -33vw;
+    height: 30vw;
+    width: 35vw;
+    border-radius: 2%;
+    }
+    .intro {
+    height: 22vw;
+    width: 40vw;
+    background-color: rgba(240, 248, 255, 0.578);
+    position: relative;
+    /* display: inline; */
+    top: -26vw;
+    left: 57vw;
+    border-radius: 10%;
+    overflow: hidden;
+    z-index: 1;
+    }
+    .intro1{
+        display:none;
+    }
+    .designheading{
+        background-color:rgba(220, 20, 60, 0.195);
+    }
+    
+{% endblock %}
+{% block body %}
+    <div class="intro">
+        <!-- <div class="designheading"> -->
+            <div class="headings">
+                <h2>Principal's Message</h2>
+            </div>
+        <!-- </div> -->
+            <h3 class="des"></h3>
+            <span style="font-size: 5vw; position: relative; top: -4vw; display: inline;">"</span>
+            <p  align="centre" style="font-size: 1.5vw; text-align: center;  position: relative; top: -7vw; width: 40vw;">Democracy and socialism have nothing in common but one word: equality. But notice the difference: while democracy seeks equality in liberty, socialism seeks equality in restraint and servitude</p>
+            <span style="font-size: 5vw; position: relative; top: -7vw; right:-35vw; display: inline;">"</span>
+    </div>
+    <div style="height: 40vw;  position: relative; top: -16vw;">
+            <div class="designheading">
+                <div class="headings">
+                    <h2>Dr. Manjusha Deshmukh Principal</h2>
+                </div>
+            </div>
+                <h3 class="des"></h3>
+                <!-- <span style="font-size: 5vw; position: relative; top: -4vw; display: inline;">"</span> -->
+                <p  align="centre" style="font-size: 1.5vw; text-align: center;  position: relative; top: -2vw; width: 60vw;">It is my privilege to warmly welcome you to the portal of our college, Saraswati College of Engineering (S.C.O.E), which is an institution having a commitment towards quality education. “Educate and raise the masses, and thus alone a nation is possible”. With this very inspiring thought of Swami Vivekananda, Saraswati Education Society has laid a foundation to provide education in the field of engineering to students to build a stronger and skilled India. We started in September 2004 with the aim of making young India stronger and more vibrant than ever. Our dream is that SCOE should play a definitive role in shaping the careers of tomorrow’s leaders and developing individuals who can impact global development. We, at Saraswati College of Engineering keep on striving to inculcate the best of qualities as an Engineer, as a Professional and as a Human Being at precise scale in our students. Looking at our track records, SCOE has achieved many feathers in terms of good results, placements and extracurricular activities too. We are continuously in the process of imparting quality education to our budding engineers. This journey is succeeding more gloriously year after year making Indian Engineers to rule the world.
+
+                    We very much look forward to welcome you as our students in your expedition for lifelong learning.
+                    
+                </p>
+                <img src="{% static 'images/principal.png'%}" class="secretary">
+                <!-- <span style="font-size: 5vw; position: relative; top: -7vw; right:-50vw; display: inline;">"</span> -->
+    </div>
+    {% endblock %}

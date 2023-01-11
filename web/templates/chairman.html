@@ -1,0 +1,73 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+.secretary{
+  display: inline;
+  position: relative;
+  left: 63vw;
+  top: -33vw;
+  height: 30vw;
+  width: 35vw;
+  border-radius: 2%;
+  }
+  .intro {
+  height: 22vw;
+  width: 40vw;
+  background-color: rgba(240, 248, 255, 0.578);
+  position: relative;
+  /* display: inline; */
+  top: -26vw;
+  left: 57vw;
+  border-radius: 10%;
+  overflow: hidden;
+  z-index: 1;
+  }
+  .intro1{
+      display:none;
+{% endblock %}
+{% block body %}
+
+<div class="intro " >
+  <!-- <div class="designheading"> -->
+    <div class="headings">
+      <h2>Chairman's Message</h2>
+    </div>
+  <!-- </div> -->
+  <h3 class="des"></h3>
+  <span style="font-size: 5vw; position: relative; top: -4vw; display: inline;">"</span>
+  <p align="centre" style="font-size: 1.5vw; text-align: center;  position: relative; top: -6vw; width: 40vw;">Nobody
+    makes a greater mistake than he who does nothing because he could do only a little.</p>
+  <span style="font-size: 5vw; position: relative; top: -7vw; right:-35vw; display: inline;">"</span>
+</div>
+<div style="height: 50vw;   position: relative; top: -16vw;">
+  <div class="designheading">
+    <div class="headings">
+      <h2>Hon. Prithviraj Deshmukh (Chairman,SES) Chairman’s Message:</h2>
+    </div>
+  </div>
+  <h3 class="des"></h3>
+  <!-- <span style="font-size: 5vw; position: relative; top: -4vw; display: inline;">"</span> -->
+  <p align="centre" style="font-size: 1.5vw; text-align: center;  position: relative; top: -2vw; width: 60vw;">Saraswati
+    College of Engineering, SCOE has been established with a vision to become a leading research organization in the
+    world & make the youth of India globally competent to take on the challenges with ever-expanding fields of
+    technology.
+    The only & only focus of our college is to educate students with our well-versed & proficient faculties using the
+    cutting-edge infrastructure. Since its inception, SCOE has laid a lot of emphasis on quality education. We have
+    devised and launched an in-house network for quality assurance, that relentlessly ranks & keeps an eye on the
+    quality of teaching is being imparted to the students. We groom & coach every student in a way that they can “blend
+    in” with the corporate world with their great confidence and conceptual clarity.
+
+    We take pride in our very own invaluable treasure-The the team of rich & highly competent staff, who dedicate their
+    heart & soul in providing the best to the students & we also believe in upgrading ourselves of the latest trends &
+    state-of-the-art technologies by investing our time in various resources.
+
+    The dream is not only to make the students eligible but also to structure them for the industry. Giving them
+    practical exposure to successfully ‘fit-in’ in their destined job profiles. We wish our students all the best to
+    outshine and emerge as masters & groundbreakers in their chosen lines of careerism.
+
+
+  </p>
+  <img src="{% static 'images/chairman.png'%}" class="secretary">
+  <!-- <span style="font-size: 5vw; position: relative; top: -7vw; right:-50vw; display: inline;">"</span> -->
+</div>
+{% endblock %}

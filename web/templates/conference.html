@@ -1,0 +1,53 @@
+{% extends 'basic.html' %}
+{% load static%}
+{% block style %}
+{% endblock %}
+{% block body %}
+<div class="designheading" style="position: relative; margin: 1vw;">
+    <div class="headings">
+        <h2>conference details</h2>
+    </div>
+</div>
+
+<div class="maincontain" style="overflow: hidden;">
+    <div class="contain" style="position: relative; left: 10vw;">
+        <table style="font-size: 1.3vw; text-align: center;  position: relative;  width: 80vw; ">
+            <tr style="font-size: 1.5vw;border: 0.1vw solid black; position: relative;">
+                {% if number > 0 %}
+                <th
+                    style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);width: 30vw;">
+                    <h3>Title</h3>
+                </th>
+                <th
+                    style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);width: 30vw;">
+                    <h3>year</h3>
+                </th>
+                <th
+                    style="font-size: 1.5vw; position: relative;background-color: rgba(128, 128, 128, 0.253);width: 30vw;">
+                    <h3 align="center">links</h3>
+                </th>
+            </tr>
+            {% for i in question%}
+            <tr>
+                <td class="td1" style="font-size: 1.5vw;border: 0.1vw solid black; position: relative;">
+                    <h4>{{i.title}}</h4>
+                </td>
+                <td class="td1" style="font-size: 1.5vw;border: 0.1vw solid black; position: relative;">
+                    <h4>{{i.year}}</h4>
+                </td>
+                <td style="font-size: 1.5vw;border: 0.1vw solid black; position: relative;">
+                    <a href="{{i.link}}">
+                        <h4 align="center">link</h4>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+        {% if number == 0 %}
+        <h5 style="color: #603212e3; position: relative; left: 0vw; top:-1vw;" align="center">There is no data
+            available</h5>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
